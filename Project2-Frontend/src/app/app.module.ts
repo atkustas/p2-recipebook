@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CocktailComponentsComponent } from './cocktail-components/cocktail-components.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CocktailComponent,
+    CocktailComponentsComponent,
+    NewCocktailComponent
   ],
   imports: [
     BrowserModule,
