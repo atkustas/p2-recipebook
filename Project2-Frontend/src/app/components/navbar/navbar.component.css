@@ -1,0 +1,5 @@
+.navbar{overflow: hidden; background-color: darkviolet;}
+
+.nav-item:hover{background-color: deeppink; color: lightpink;}
+
+.searchbar input[type=text]{float: left; padding: 10px; border: mediumorchid; margin-top: 8px; margin-left: 16px; font-size: 20px;}
