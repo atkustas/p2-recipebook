@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CocktailImageComponent } from './cocktail-image.component';
+import { ReviewComponent } from './review.component';
 
-describe('CocktailImageComponent', () => {
-  let component: CocktailImageComponent;
-  let fixture: ComponentFixture<CocktailImageComponent>;
+describe('ReviewComponent', () => {
+  let component: ReviewComponent;
+  let fixture: ComponentFixture<ReviewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CocktailImageComponent ]
+      declarations: [ ReviewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CocktailImageComponent);
+    fixture = TestBed.createComponent(ReviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
