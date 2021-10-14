@@ -8,6 +8,8 @@ import { CocktailImageComponent } from './components/cocktail-image/cocktail-ima
 import { IngredientComponent } from './components/ingredient/ingredient.component';
 import { IngredientImageComponent } from './components/ingredient-image/ingredient-image.component';
 import { UserComponent } from './components/user/user.component';
+import { LoginComponent } from './components/login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -17,12 +19,14 @@ import { UserComponent } from './components/user/user.component';
     CocktailImageComponent,
     IngredientComponent,
     IngredientImageComponent,
-    UserComponent
+    UserComponent,
+    LoginComponent
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
