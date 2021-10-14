@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
 import { CocktailComponent } from './components/cocktail/cocktail.component';
 import { CocktailImageComponent } from './components/cocktail-image/cocktail-image.component';
 import { IngredientComponent } from './components/ingredient/ingredient.component';
@@ -23,12 +22,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UserComponent,
     LoginComponent
 
-=======
-
-@NgModule({
-  declarations: [
-    AppComponent
->>>>>>> 6966b084e4c21dd55a8b1fd409c7701e9bbd5392
   ],
   imports: [
     BrowserModule,
