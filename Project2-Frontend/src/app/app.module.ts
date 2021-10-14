@@ -9,6 +9,7 @@ import { IngredientComponent } from './components/ingredient/ingredient.componen
 import { IngredientImageComponent } from './components/ingredient-image/ingredient-image.component';
 import { UserComponent } from './components/user/user.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { UserComponent } from './components/user/user.component';
     IngredientComponent,
     IngredientImageComponent,
     UserComponent
+
   ],
   imports: [
     BrowserModule,
