@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CocktailComponent } from './components/cocktail/cocktail.component';
 import { IngredientComponent } from './components/ingredient/ingredient.component';
-import { LoginComponent } from './components/login/login.component';
+//import { LoginComponent } from './components/login/login.component';
 import { ReviewComponent } from './components/review/review.component';
 import { UserComponent } from './components/user/user.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
@@ -25,10 +25,10 @@ const routes: Routes = [
     component: CocktailComponent
   },
 
-  {
-    path: "login",
-    component: LoginComponent
-  },
+  // {
+  //   path: "login",
+  //   component: LoginComponent
+  // },
 
   {
     path: "review",

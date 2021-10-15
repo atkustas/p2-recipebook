@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { CocktailComponent } from './components/cocktail/cocktail.component';
 import { IngredientComponent } from './components/ingredient/ingredient.component';
 import { UserComponent } from './components/user/user.component';
-import { LoginComponent } from './components/login/login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReviewComponent } from './components/review/review.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
@@ -17,10 +17,11 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
     CocktailComponent,
     IngredientComponent,
     UserComponent,
-    LoginComponent,
+   // LoginComponent,
     ReviewComponent,
     WelcomeComponent
 
