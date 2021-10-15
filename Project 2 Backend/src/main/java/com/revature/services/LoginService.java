@@ -16,7 +16,7 @@ public class LoginService {
 		
 		//check that username & password provided match credentials in db
 		Boolean areEqual = username.equals(user.getUsername());
-		Boolean areEqual2 = username.equals(user.getPassword());
+		Boolean areEqual2 = password.equals(user.getPassword());
 		
 		//if the credentials match, return true
 		if(areEqual && areEqual2) {
