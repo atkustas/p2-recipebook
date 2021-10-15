@@ -3,3 +3,5 @@
 .nav-item:hover{background-color: deeppink; color: lightpink;}
 
 .searchbar input[type=text]{float: left; padding: 10px; border: mediumorchid; margin-top: 8px; margin-left: 16px; font-size: 20px;}
+
+.explore{background-color: darkviolet; display: inline; font-size: 40px;}
