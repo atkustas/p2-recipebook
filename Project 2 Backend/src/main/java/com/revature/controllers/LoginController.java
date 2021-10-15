@@ -28,12 +28,11 @@ public class LoginController {
 			ctx.status(200);
 			
 			
-			ctx.result("Login Success! JWT is: " + jwt);
+			ctx.result("Successful login! JWT is: " + jwt);
 			
 		} else { 
-			
 			ctx.status(401); 
-			ctx.result("Login Failed!");
+			ctx.result("Login failed!");
 			
 		}
 		

@@ -1,5 +1,7 @@
 package com.revature.daos;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -7,27 +9,111 @@ import org.hibernate.query.Query;
 import com.revature.models.User;
 import com.revature.utils.HibernateUtil;
 
-public class UserDao implements UserDaoInterface {
-
+public class UserDao implements UserInterface {
+	
 	@Override
-	public boolean getCredentials(String username, String password) {
+	public void insertUser(User userInput) {
+		
 		try(Session ses = HibernateUtil.getSession()){
 			
-			User user = (User) ses.createQuery("FROM User WHERE username = \'" + username + "\'" +" AND "+ "password = \'" + password + "\'").uniqueResult();
+			ses.save(userInput);
 			
-			if (user != null) {
-				
-				HibernateUtil.closeSession();
-				return true;
-			}
-			
-			HibernateUtil.closeSession();
-			return false;
-		
-		} catch(HibernateException e) {
+		} catch(Exception e) {
+			System.out.println("User addition failed.");
 			e.printStackTrace();
-			System.out.println("Unable to access database for login");
 		}
-		return false;
+		
+		HibernateUtil.closeSession();
+		
 	}
+	
+	@Override
+	public User userLogin(String username) {
+		
+		User temp = new User();
+		
+		temp = findUserByUsername(username);
+		int tempId = temp.getUser_id();
+		
+		//debugging
+		System.out.println("Inside userLogin");
+		System.out.println(username);
+		
+		Session ses = HibernateUtil.getSession();
+		User user = ses.get(User.class, tempId);
+		
+		//debugging
+		System.out.println("Inside userLogin");
+		System.out.println(user.toString());
+		
+		HibernateUtil.closeSession();
+		
+		return user;
+		
+	}
+
+	public User findUserByUsername(String username) {
+		
+		int tempId = 0;
+		
+		//retrieve users from database
+		List<User> allUser = findAllUsers();
+		
+		//search user list for a user with matching username
+		for (User u : allUser) {
+			System.out.println("Inside findUserByUsername");
+			System.out.println(u);
+			Boolean areEqual = 	username.equals(u.getUsername());
+			if(areEqual) {
+			
+				User temp = u;
+				tempId = temp.getUser_id();
+				
+			}
+		}
+		
+		//search db for User object based on id if it found a match on username
+		Session ses = HibernateUtil.getSession();
+
+		User user = ses.get(User.class, tempId);
+		//System.out.println(user);
+
+		HibernateUtil.closeSession();
+
+
+		return user;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<User> findAllUsers() {
+
+		Session ses = HibernateUtil.getSession();
+			
+		List<User> listOfUsers = ses.createQuery("FROM User").list();
+		HibernateUtil.closeSession();
+		
+		//debugging
+		for(User u : listOfUsers) {
+			System.out.println("Inside findAllUsers");
+			System.out.println(u);
+		}
+			
+		return listOfUsers;
+		
+		
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<User> getUserByCredentials(String username, String password) {
+		
+		Session ses = HibernateUtil.getSession();
+			
+		List<User> user = ses.createQuery("FROM User WHERE username = '" + username + "' AND password = '" + password + "'").list();
+		HibernateUtil.closeSession();
+		
+		return user;
+
+	}
+
 }
