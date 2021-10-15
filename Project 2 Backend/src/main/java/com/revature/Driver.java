@@ -3,6 +3,7 @@ package com.revature;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
+import com.revature.controllers.LoginController;
 import com.revature.utils.HibernateUtil;
 
 import io.javalin.Javalin;
@@ -11,6 +12,7 @@ public class Driver {
 
 	public static void main(String[] args) {
 		System.out.println("%%%%% MAIN LOADED %%%%%");
+		LoginController lc = new LoginController(); 
 		
 		//open connection
 		try (Session ses = HibernateUtil.getSession()) {
@@ -30,6 +32,10 @@ public class Driver {
 				}
 
 		).start(8090);
+		
+		//Added by Mesfin
+		app.post("/login", lc.loginHandler);
+
 
 	}
 
