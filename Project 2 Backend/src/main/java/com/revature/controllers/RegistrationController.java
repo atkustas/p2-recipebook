@@ -1,6 +1,7 @@
 package com.revature.controllers;
 
 import com.google.gson.Gson;
+import com.revature.daos.UserDao;
 import com.revature.models.User;
 import com.revature.services.RegistrationService;
 
@@ -9,7 +10,8 @@ import io.javalin.http.Handler;
 public class RegistrationController {
 	
 	RegistrationService rs = new RegistrationService();
-	
+	UserDao uDao = new UserDao();
+		
 	public Handler register = (ctx) -> {
 		
 		//convert incoming object to User object
@@ -25,6 +27,7 @@ public class RegistrationController {
 			ctx.status(409);
 			ctx.result("Account with this email already exists.");
 		} else {
+			uDao.insertUser(userInput);
 			ctx.status(201);
 			ctx.result("New user added!");
 		}
