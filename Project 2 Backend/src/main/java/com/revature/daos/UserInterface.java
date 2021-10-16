@@ -12,6 +12,8 @@ public interface UserInterface {
 	
 	public User findUserByUsername(String username);
 	
+	public User findUserByEmail(String email);
+	
 	public List<User> findAllUsers();
 
 	public List<User> getUserByCredentials(String username, String password);

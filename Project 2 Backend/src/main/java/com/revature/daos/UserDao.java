@@ -1,10 +1,7 @@
 package com.revature.daos;
 
 import java.util.List;
-
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.query.Query;
 
 import com.revature.models.User;
 import com.revature.utils.HibernateUtil;
@@ -80,6 +77,38 @@ public class UserDao implements UserInterface {
 		HibernateUtil.closeSession();
 
 		return user;
+	}
+	
+	
+	public User findUserByEmail(String email) {
+		
+		int tempId = 0;
+		
+		//retrieve users from database
+		List<User> allUser = findAllUsers();
+		
+		//search user list for a user with matching username
+		for (User u : allUser) {
+			System.out.println("Inside findUserByEmail");
+			System.out.println(u);
+			Boolean testEmailEquality = email.equals(u.getEmail());
+			if(testEmailEquality) {
+			
+				User existingUser = u;
+				tempId = existingUser.getUser_id();
+				
+			}
+		}
+		
+		//search db for User object based on id if it found a match on username
+		Session ses = HibernateUtil.getSession();
+
+		User existingUser = ses.get(User.class, tempId);
+
+		HibernateUtil.closeSession();
+
+		return existingUser;
+		
 	}
 
 	@SuppressWarnings("unchecked")
