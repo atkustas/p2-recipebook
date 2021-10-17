@@ -12,7 +12,7 @@
 		<!-- password -->
 		<property name="hibernate.connection.password">password</property>
 		<!-- jdbc:postgresql://{host}[:{port}]/[{database}] -->
-		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres?currentSchema=cocktail</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://35.245.118.231:5432/postgres?currentSchema=cocktail</property>
 		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
 		<!-- Hibernate Properties -->
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
