@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CocktailComponent } from './components/cocktail/cocktail.component';
-import { IngredientComponent } from './components/ingredient/ingredient.component';
 import { UserComponent } from './components/user/user.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +19,6 @@ import {AccordionModule} from 'ngx-bootstrap/accordion'
     AppComponent,
     NavbarComponent,
     CocktailComponent,
-    IngredientComponent,
     UserComponent,
    // LoginComponent,
     ReviewComponent,
