@@ -24,10 +24,3 @@ describe('WelcomeComponent', () => {
   });
 });
 
-//add URL variable so that we can add fetch request to backend
-
-async function loginFunc() { //add loginFunc
-  
-}
-
-//add Registration function
