@@ -10,8 +10,11 @@ public interface UserInterface {
 	
 	public User userLogin(String username);
 	
+<<<<<<< HEAD
 	public User findUserByUserid(int userid);
 
+=======
+>>>>>>> d4ef34dcf336f70fe99e628ed2c751d9f5df5b2c
 	public User findUserByUsername(String username);
 	
 	public User findUserByEmail(String email);

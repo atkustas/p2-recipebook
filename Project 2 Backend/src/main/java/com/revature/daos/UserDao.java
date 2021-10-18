@@ -15,6 +15,7 @@ public class UserDao implements UserInterface {
 		try(Session ses = HibernateUtil.getSession()){
 			
 			ses.save(userInput);
+<<<<<<< HEAD
 			
 		} catch(Exception e) {
 			System.out.println("User addition failed.");
@@ -76,6 +77,57 @@ public class UserDao implements UserInterface {
 			Boolean areEqual = 	username.equals(u.getUsername());
 			if(areEqual) {
 			
+=======
+			
+		} catch(Exception e) {
+			System.out.println("User addition failed.");
+			e.printStackTrace();
+		}
+		
+		HibernateUtil.closeSession();
+		
+	}
+	
+	@Override
+	public User userLogin(String username) {
+		
+		User temp = new User();
+		
+		temp = findUserByUsername(username);
+		int tempId = temp.getUser_id();
+		
+		//debugging
+		System.out.println("Inside userLogin");
+		System.out.println(username);
+		
+		Session ses = HibernateUtil.getSession();
+		User user = ses.get(User.class, tempId);
+		
+		//debugging
+		System.out.println("Inside userLogin");
+		System.out.println(user.toString());
+		
+		HibernateUtil.closeSession();
+		
+		return user;
+		
+	}
+
+	public User findUserByUsername(String username) {
+		
+		int tempId = 0;
+		
+		//retrieve users from database
+		List<User> allUser = findAllUsers();
+		
+		//search user list for a user with matching username
+		for (User u : allUser) {
+			System.out.println("Inside findUserByUsername");
+			System.out.println(u);
+			Boolean areEqual = 	username.equals(u.getUsername());
+			if(areEqual) {
+			
+>>>>>>> d4ef34dcf336f70fe99e628ed2c751d9f5df5b2c
 				User temp = u;
 				tempId = temp.getUser_id();
 				

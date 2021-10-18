@@ -5,7 +5,10 @@ import org.hibernate.Session;
 
 import com.revature.controllers.LoginController;
 import com.revature.controllers.RegistrationController;
+<<<<<<< HEAD
 import com.revature.controllers.ReviewController;
+=======
+>>>>>>> d4ef34dcf336f70fe99e628ed2c751d9f5df5b2c
 import com.revature.daos.UserDao;
 import com.revature.models.User;
 import com.revature.utils.HibernateUtil;
@@ -17,7 +20,10 @@ public class Driver {
 	public static void main(String[] args) {
 		System.out.println("%%%%% MAIN LOADED %%%%%");
 		LoginController lc = new LoginController();
+<<<<<<< HEAD
 		ReviewController rvc = new ReviewController();
+=======
+>>>>>>> d4ef34dcf336f70fe99e628ed2c751d9f5df5b2c
 		RegistrationController rc = new RegistrationController();
 		
 		//open connection
@@ -41,7 +47,10 @@ public class Driver {
 		
 		app.post("/login", lc.loginHandler);
 		app.post("/register", rc.register);
+<<<<<<< HEAD
 		app.post("/addreview", rvc.addreview);
+=======
+>>>>>>> d4ef34dcf336f70fe99e628ed2c751d9f5df5b2c
 		
 		
 		//add some users
