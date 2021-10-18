@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReviewComponent } from './components/review/review.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FormsModule } from '@angular/forms';
-import {AccordionModule} from 'ngx-bootstrap/accordion'
+
 
 
 @NgModule({
@@ -31,7 +31,6 @@ import {AccordionModule} from 'ngx-bootstrap/accordion'
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    AccordionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
