@@ -12,19 +12,26 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
 
-const url = "http://localhost:8090/"
 
-let i = null;
-var allTickets= [i];
-//let userOb;
+url:String = "http://localhost:8090/"
+
+i = null;
+allTickets= [this.i];
+userOb:any;
 
 //document.getElementById("empsubForm").addEventListener("click", newTicket);
 
+type_id = 0;
+
+amount:any = 0; //document.getElementById("EmpFormControlInputAmt").value;
+timeSubmitted:any = "10/11/2021"; //edit current date function
+type:String ="";//document.getElementById("exampleFormControlSelect1").value;
+desc:String = "";//document.getElementById("EmpFormControlTextarea1").value;
+
 
 //add ticket function
-async function newTicket() {
+async newTicket() {
 
   console.log("inside the newTicket async");
   //console.log("This is the userOb: " + userOb);
@@ -36,22 +43,16 @@ async function newTicket() {
   //document.getElement....value for each ticket.parameter
   //need to have all the parameters set for the server to accept the ticket
 
-  let type_id = 0;
 
-  //let amount = document.getElementById("EmpFormControlInputAmt").value;
-  let timeSubmitted = "10/11/2021"; //edit current date function
-  //let type = document.getElementById("exampleFormControlSelect1").value;
-  //let desc = document.getElementById("EmpFormControlTextarea1").value;
-
-      // if(type == "Business"){
-      //     type_id = 1;
-      // }else if(type = "Travel"){
-      //     type_id = 2;
-      // }else if(type = "Medical"){
-      //     type_id= 3;
-      // }else{
-      //     type_id = 4;
-      // }
+      if(this.type == "Business"){
+          this.type_id = 1;
+      }else if(this.type = "Travel"){
+          this.type_id = 2;
+      }else if(this.type = "Medical"){
+          this.type_id= 3;
+      }else{
+          this.type_id = 4;
+      }
 
       // let type_id_ob = {
       //     re_type: type,
@@ -66,9 +67,9 @@ async function newTicket() {
       };
 
 
-  // let ticket = {
-  //     re_amount: amount,
-  //     re_submitted: timeSubmitted,
+    let ticket = {
+    re_amount: this.amount,
+   re_submitted: this.timeSubmitted,
   //     re_resolved: null,
   //     re_desc: desc,
   //     re_receipt: null,
@@ -76,17 +77,17 @@ async function newTicket() {
   //     re_resolver: null,
   //     re_status_id: status_id_ob,
   //     re_type_id: type_id_ob
-  // };
+    };
 
-  //console.log(ticket);
+  console.log(ticket);
   console.log("sending request");
 
-  let response = await fetch(url + "newticket", {
+  let response = await fetch(this.url + "newticket", {
 
 
       method: "POST",
       mode: 'cors',
-      //body: JSON.stringify(ticket),
+      body: JSON.stringify(ticket),
       credentials: "include"
 
   });
@@ -97,14 +98,16 @@ async function newTicket() {
   if(response.status === 201){
 
       console.log("New ticket submitted.");
+      this.amount=null;
       // document.getElementById("EmpFormControlInputAmt").value = null;
       // document.getElementById("EmpFormControlTextarea1").value = null;
 
       // //call function to disappear ticket form and show success message
       // changeHideEmpForm()
   }
-};
+}
 
+}
 
 
 

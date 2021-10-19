@@ -1,6 +1,8 @@
 <p>registration works!</p>
 
+<div id="MainConRegs" class="container">
 <div id="EmpMasterForm">
+  <!--*ngIf="greeterDiv"-->
   <form id="empupdateApp" class="empupdateForm" action="#" method="post" onsubmit="newTicket();return false">
 
 <div>
@@ -12,7 +14,7 @@
 
       <div id="empform1" class="form-group">
           <label for="FormControlInputAmt">Amount ($)</label><br>
-          <input type="text" class="form-control" name="Amount" id="EmpFormControlInputAmt" placeholder="($$)"><br>
+          <input type="number" class="form-control" name="amount" id="EmpFormControlInputAmt" placeholder="($$)" [(ngModel)]="amount"/><br>
       </div>
 
 
@@ -41,8 +43,13 @@
       <br>
   </div>
 
-      <button id="empsubForm" class="btn btn-primary">Submit</button>
+      <button id="empsubForm" (click)="newTicket()" class="btn btn-primary">Submit</button>
+      <!-- (click)="newTicket()" -->
 
   </form>
+
+</div>
+
+<!-- <h2 *ngIf="amount" id="Welcomeh2" style="color: crimson;" [hidden]="Welcomeh2Tog">Welcome, {{name}}</h2> -->
 
 </div>
