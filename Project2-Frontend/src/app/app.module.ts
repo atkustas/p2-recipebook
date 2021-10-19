@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReviewComponent } from './components/review/review.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FormsModule } from '@angular/forms';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 
 
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     UserComponent,
    // LoginComponent,
     ReviewComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    RegistrationComponent
 
   ],
   imports: [

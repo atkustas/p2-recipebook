@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { CocktailComponent } from './components/cocktail/cocktail.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 //import { LoginComponent } from './components/login/login.component';
 import { ReviewComponent } from './components/review/review.component';
 import { UserComponent } from './components/user/user.component';
@@ -19,10 +20,10 @@ const routes: Routes = [
     component: CocktailComponent
   },
 
-  // {
-  //   path: "login",
-  //   component: LoginComponent
-  // },
+  {
+    path: "newUser",
+    component: RegistrationComponent
+  },
 
   {
     path: "review",

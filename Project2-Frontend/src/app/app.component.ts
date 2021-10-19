@@ -8,3 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Project2-Frontend';
 }
+
+console.log(5);
