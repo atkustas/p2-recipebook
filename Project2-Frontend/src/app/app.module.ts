@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReviewComponent } from './components/review/review.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -21,10 +22,10 @@ import { RegistrationComponent } from './components/registration/registration.co
     NavbarComponent,
     CocktailComponent,
     UserComponent,
-   // LoginComponent,
     ReviewComponent,
     WelcomeComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    HomeComponent
 
   ],
   imports: [

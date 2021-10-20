@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { CocktailComponent } from './components/cocktail/cocktail.component';
+import { HomeComponent } from './components/home/home.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-//import { LoginComponent } from './components/login/login.component';
 import { ReviewComponent } from './components/review/review.component';
 import { UserComponent } from './components/user/user.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-//testing branches
 const routes: Routes = [
 
   {
@@ -21,7 +20,7 @@ const routes: Routes = [
   },
 
   {
-    path: "newUser",
+    path: "registration",
     component: RegistrationComponent
   },
 
@@ -33,6 +32,11 @@ const routes: Routes = [
   {
     path: "",
     component: WelcomeComponent
+  },
+
+  {
+    path: "home",
+    component: HomeComponent
   }
 
 ];
