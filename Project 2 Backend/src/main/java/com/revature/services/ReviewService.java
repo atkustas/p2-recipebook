@@ -1,5 +1,7 @@
 package com.revature.services;
 
+import java.util.List;
+
 import com.revature.daos.CocktailDao;
 import com.revature.daos.ReviewDao;
 import com.revature.daos.UserDao;
@@ -28,6 +30,18 @@ public class ReviewService {
 	
 	public void addReview(Review r) {
 		rDao.addReview(r);
+	}
+	
+	public List<Review> allReviews(){
+		return rDao.getAllReviews();
+	}
+	
+	public List<Review> reviewsByUser(User user){
+		return rDao.reviewsByUser(user);
+	}
+	
+	public List<Review> reviewsByDrink(String drink){
+		return rDao.getReviewsByDrink(drink);
 	}
 	
 

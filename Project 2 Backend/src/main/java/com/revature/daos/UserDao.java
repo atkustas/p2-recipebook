@@ -150,6 +150,7 @@ public class UserDao implements UserInterface {
 		Session ses = HibernateUtil.getSession();
 			
 		List<User> user = ses.createQuery("FROM User WHERE username = '" + username + "' AND password = '" + password + "'").list();
+		
 		HibernateUtil.closeSession();
 		
 		return user;
