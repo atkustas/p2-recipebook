@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
-import {NgbModule } from 'ngx-bootstrap/ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CocktailComponent } from './components/cocktail/cocktail.component';
-import { IngredientComponent } from './components/ingredient/ingredient.component';
 import { UserComponent } from './components/user/user.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReviewComponent } from './components/review/review.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-import { FormsModule } from '@angular/forms';
-import {AccordionModule} from 'ngx-bootstrap/accordion'
+import { RegistrationComponent } from './components/registration/registration.component';
+import { HomeComponent } from './components/home/home.component';
+
 
 
 @NgModule({
@@ -21,11 +21,11 @@ import {AccordionModule} from 'ngx-bootstrap/accordion'
     AppComponent,
     NavbarComponent,
     CocktailComponent,
-    IngredientComponent,
     UserComponent,
-   // LoginComponent,
     ReviewComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    RegistrationComponent,
+    HomeComponent
 
   ],
   imports: [
@@ -34,8 +34,6 @@ import {AccordionModule} from 'ngx-bootstrap/accordion'
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    AccordionModule,
-    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

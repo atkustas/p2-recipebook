@@ -1,37 +1,29 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="dropdown">
+    <div class="container-fluid">
         <a class="navbar-brand" routerLink="" href="#">
             <img src="../../../assets/BarNav1.jpg" alt="" height="100" width="100" class="d-inline-block align-text-top">
-            The Bar
+            The Mixologist Cookbook
         </a>
-        <button id="searchButton" class="btn btn-success col-sm-6">
+        <button id="searchButton" class="btn btn-success col-sm-4">
         <input type="text" placeholder="Search" id="searchbar">
         Search
         </button>
-        <div class="accordion">
-        <button id="explore"   class="accordion-button" type="search" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-controls="collapseOne" aria-expanded="true" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            Explore
-            <ul mdbDropdownMenu class="navbar-nav" aria-labelledby="dropdownMenuButton"> <!--Copied code from div(navbarnav) to try to get accordion to display dropdown function-->
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="cocktail">Cocktail</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="ingredient">Ingredient</a>
-                </li>
-            </ul>
-        </button>
-        </div>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul mdbDropdownMenu class="navbar-nav" aria-labelledby="dropdownMenuButton">
+            <ul  class="navbar-nav float-right">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="cocktail">Cocktail</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="ingredient">Ingredient</a>
+                    <a class="nav-link" routerLink="review">Review</a>
                 </li>
+                <li>
+                    <a class="nav-link" routerLink="user">User</a>
+                </li>
+                <li>
+                  <a class="nav-link" routerLink="newUser">New Account</a>
+              </li>
             </ul>
-        
+
     </div>
     </div>
 </nav>

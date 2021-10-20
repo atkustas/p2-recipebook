@@ -1,5 +1,13 @@
-#welcome{margin-top: 30px; color: fuchsia;}
-#login-row{background-color: black;}
-#welcomeBody{background-color: deepskyblue;}
-#loginText{color: fuchsia;}
-#loginButton{background-color: darkviolet;}
+body, html{
+    height: 100%;
+}
+
+#welcome{
+    border-style: solid;
+    border-radius: .5em;
+}
+
+.bg{
+    background-image: url('../../../assets/BarNav1.jpg');
+    height: 100%;
+}
