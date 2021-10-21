@@ -2,7 +2,6 @@ package com.revature.daos;
 
 import java.util.List;
 
-import org.hibernate.Hibernate;
 import org.hibernate.Session;
 
 import com.revature.models.Cocktail;
