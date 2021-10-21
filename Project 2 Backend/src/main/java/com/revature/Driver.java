@@ -7,8 +7,10 @@ import com.revature.controllers.LoginController;
 import com.revature.controllers.RegistrationController;
 import com.revature.controllers.ReviewController;
 import com.revature.daos.CocktailDao;
+import com.revature.daos.ReviewDao;
 import com.revature.daos.UserDao;
 import com.revature.models.Cocktail;
+import com.revature.models.Review;
 import com.revature.models.User;
 import com.revature.utils.HibernateUtil;
 
@@ -24,6 +26,7 @@ public class Driver {
 		CocktailDao cd = new CocktailDao();
 		ReviewController rvc = new ReviewController();
 		RegistrationController rc = new RegistrationController();
+		ReviewDao rd = new ReviewDao();
 		
 		//open connection
 		try (Session ses = HibernateUtil.getSession()) {
@@ -68,6 +71,10 @@ public class Driver {
 		
 		cd.addCocktail(c1);
 		cd.addCocktail(c2);
+		
+		Review r1 = new Review(u1, c1, "pretty good", "today");
+		rd.addReview(r1);
+		
 
 
 	}

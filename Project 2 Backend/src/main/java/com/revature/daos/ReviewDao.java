@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 
+import com.revature.models.Cocktail;
 import com.revature.models.Review;
 import com.revature.models.User;
 import com.revature.utils.HibernateUtil;
@@ -22,11 +23,23 @@ public class ReviewDao implements ReviewInterface {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Review> getReviewsByDrink(String drink) {
+	public List<Review> getReviewsByDrink(String cocktail) {
 		
 		Session ses = HibernateUtil.getSession();
+		
+			List<Cocktail> c = ses.createQuery("FROM Cocktail WHERE drink = " +"'"+cocktail+"'").list();
 			
-			List<Review> drinkReviews= ses.createQuery("FROM Review WHERE drink = " +drink).list();
+			for(Cocktail test : c) {
+				System.out.println(test);
+			}
+			
+			Cocktail drink = null;
+			
+			for(Cocktail d : c) {
+				drink = d;
+			}
+			
+			List<Review> drinkReviews= ses.createQuery("FROM Review WHERE drink = " + drink.getDrink_id()).list();
 			
 			//testing
 			for(Review d : drinkReviews) {
@@ -64,6 +77,10 @@ public class ReviewDao implements ReviewInterface {
 	public List<Review> reviewsByUser(User u) {
 
 		Session ses = HibernateUtil.getSession();
+		
+		//debugging
+		System.out.println("Inside reviewsByUser");
+		System.out.println(u);
 		
 		List<Review> userReviews = ses.createQuery("FROM Review WHERE rev_author = " + u.getUser_id()).list();
 		
