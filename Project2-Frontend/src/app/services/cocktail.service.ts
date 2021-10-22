@@ -11,8 +11,8 @@ export class CocktailService {
 
   constructor(private http:HttpClient) { }
 
-  getCocktailFromApi(cocktail:String):Observable<Cocktail>{
-    return this.http.get("www.thecocktaildb.com/api/json/v1/1/search.php?s=" + cocktail) as Observable<Cocktail>
+  getCocktailFromApi(input:String):Observable<Cocktail>{
+    return this.http.get("www.thecocktaildb.com/api/json/v1/1/search.php?s=" + input) as Observable<Cocktail>
   }
 
   getrandomCocktail():Observable<Cocktail>{
