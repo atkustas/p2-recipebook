@@ -2,6 +2,9 @@ package com.revature.controllers;
 
 import java.util.Calendar;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.google.gson.Gson;
 
 import com.revature.daos.UserDao;
@@ -14,6 +17,7 @@ public class RegistrationController {
 	
 	RegistrationService rs = new RegistrationService();
 	UserDao uDao = new UserDao();
+	Logger log = LogManager.getLogger(RegistrationController.class);
 		
 	public Handler register = (ctx) -> {
 		
@@ -40,17 +44,21 @@ public class RegistrationController {
 		if(age<21 || (age==21 && month<0) || (age==21 && month==0 && day<0)) {
 			ctx.status(403);
 			ctx.result("You are under age!");
+			log.info("Underage user attempted registration and was rejected.");
 		} else if(rs.findUserByUsername(userInput.getUsername())) {
 			ctx.status(406);
 			ctx.result("Username already taken!");
+			log.info("User attemped registration with an already taken username: " + userInput.getUsername() + ". Registration rejected.");
 		} else if(rs.findUserByEmail(userInput.getEmail())) {
 			ctx.status(409);
 			ctx.result("Account with this email already exists.");
+			log.info("User attempted registration with an email already in use: " + userInput.getEmail() + ". Registration failed.");
 
 		} else {
 			uDao.insertUser(userInput);
 			ctx.status(201);
 			ctx.result("New user added!");
+			log.info("New user " + userInput.getFirstName() +" "+ userInput.getLastName() + "registered with site.");
 		}
 
 		};

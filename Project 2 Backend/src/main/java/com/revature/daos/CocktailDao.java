@@ -2,12 +2,15 @@ package com.revature.daos;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
-
-import com.revature.models.Cocktail;
 import com.revature.utils.HibernateUtil;
+import com.revature.models.Cocktail;
+
 
 public class CocktailDao implements CocktailInterface{
+	Logger log = LogManager.getLogger(CocktailDao.class);
 
 	public Cocktail findDrinkById(int id) {
 		
@@ -24,16 +27,34 @@ public class CocktailDao implements CocktailInterface{
 	public void addCocktail(Cocktail c) {
 	
 		try(Session ses = HibernateUtil.getSession()){
-			
-			ses.save(c);
-
+		
+		Cocktail existingDrink = null;
+		
+		List<Cocktail> cocktailList = getAllCocktails();
+		
+		for(Cocktail d : cocktailList) {
+			if(d.getDrink().equalsIgnoreCase(c.getDrink())) {
+				existingDrink = c;
+			}
+		}
+		
+		//debugging
+		System.out.println(existingDrink);
+		
+		if(existingDrink == null) {
+			Session ses2 = HibernateUtil.getSession();
+			ses2.save(c);
+			log.info("New cocktail added to database: " + c.getDrink());
+			HibernateUtil.closeSession();
+		}
+		
 			
 		} catch(Exception e) {
 			System.out.println("Cocktail addition failed.");
 			e.printStackTrace();
 		}
 		
-		HibernateUtil.closeSession();
+		
 		
 	}
 

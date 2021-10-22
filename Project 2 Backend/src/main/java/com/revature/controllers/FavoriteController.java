@@ -1,6 +1,12 @@
 package com.revature.controllers;
 
+import com.google.gson.Gson;
+import com.revature.models.Cocktail;
+import com.revature.models.Favorite;
+import com.revature.models.ReviewDTO;
+import com.revature.models.User;
 import com.revature.services.FavoriteService;
+import com.revature.services.ReviewService;
 
 import io.javalin.http.Handler;
 
@@ -9,8 +15,9 @@ public class FavoriteController {
 	ReviewService rs = new ReviewService();
 	FavoriteService fs = new FavoriteService();
 	
-	public Handler addFavorite = (ctx) -> {
+	public Handler addfavorite = (ctx) -> {
 		if(ctx.req.getSession(false) != null) {
+			
 				String body = ctx.body();
 				Gson gson = new Gson();
 				

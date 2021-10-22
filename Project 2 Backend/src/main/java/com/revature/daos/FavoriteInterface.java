@@ -1,7 +1,6 @@
 package com.revature.daos;
 
-import com.revature.models.Cocktail;
-import com.revature.models.User;
+import com.revature.models.Favorite;
 
 public interface FavoriteInterface {
 	
