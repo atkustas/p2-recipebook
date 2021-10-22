@@ -5,7 +5,7 @@ import com.revature.models.User;
 
 public interface FavoriteInterface {
 	
-	public void addFavorite(User u, Cocktail drink);
+	public void addFavorite(Favorite f);
 	
 	public void deleteFavoriteById(int id);
 

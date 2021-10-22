@@ -27,6 +27,7 @@ public class Driver {
 		ReviewController rvc = new ReviewController();
 		RegistrationController rc = new RegistrationController();
 		ReviewDao rd = new ReviewDao();
+		FavoriteDao fd=new FavoriteDao();
 		
 		//open connection
 		try (Session ses = HibernateUtil.getSession()) {
@@ -75,6 +76,9 @@ public class Driver {
 		Review r1 = new Review(u1, c1, "pretty good", "today");
 		rd.addReview(r1);
 		
+		Favorite f1=new Favorite(u1,c1);
+		fd.addFavorite(f1);
+
 
 
 	}

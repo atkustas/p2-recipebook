@@ -10,14 +10,10 @@ import com.revature.utils.HibernateUtil;
 public class FavoriteDao implements FavoriteInterface {
 
 	@Override
-	public void addFavorite(User u, Cocktail drink) {
+	public void addFavorite(Favorite f) {
 
-		Favorite f = new Favorite(u, drink);
-		
 		try(Session ses = HibernateUtil.getSession()){
-			
 			ses.save(f);
-			
 		} catch(Exception e) {
 			System.out.println("Favorite addition failed.");
 			e.printStackTrace();
@@ -26,6 +22,7 @@ public class FavoriteDao implements FavoriteInterface {
 		HibernateUtil.closeSession();
 		
 	}
+
 
 	@Override
 	public void deleteFavoriteById(int id) {
