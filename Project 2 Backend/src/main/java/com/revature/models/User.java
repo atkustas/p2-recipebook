@@ -1,9 +1,22 @@
 package com.revature.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "users")
 public class User {
 	
 	//variables
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "user_id")
 	private int user_id;
+	
 	private String email;
 	private String username;
 	private String password;
@@ -11,10 +24,23 @@ public class User {
 	private String lastName;
 	private String dob;
 	
-	//all-args
+	//no args
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	
+	//all args
+	public User(int user_id, String email, String username, String password, String firstName, String lastName,
+			String dob) {
+		super();
+		this.user_id = user_id;
+		this.email = email;
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dob = dob;
 	}
 
 	//no-id constructor
@@ -27,6 +53,8 @@ public class User {
 		this.lastName = lastName;
 		this.dob = dob;
 	}
+
+	
 
 	@Override
 	public String toString() {
