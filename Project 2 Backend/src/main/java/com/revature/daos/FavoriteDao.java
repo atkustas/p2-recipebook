@@ -1,5 +1,7 @@
 package com.revature.daos;
 
+import java.util.List;
+
 import org.hibernate.Session;
 
 import com.revature.models.Cocktail;
@@ -30,6 +32,22 @@ public class FavoriteDao implements FavoriteInterface {
 		
 	}
 	
+	@SuppressWarnings("unchecked")
+	public List<Favorite> viewFavorites(User u) {
+		
+		Session ses = HibernateUtil.getSession();
+		
+		List<Favorite> userFavs = ses.createQuery("FROM Favorite WHERE user_list = " + u.getUser_id()).list();
+		
+		for(Favorite f : userFavs) {
+			System.out.println(f);
+		}
+		
+		HibernateUtil.closeSession();
+		
+		return userFavs;
+		
+	}
 	
 
 }

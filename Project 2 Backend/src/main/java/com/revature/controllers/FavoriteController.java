@@ -1,8 +1,11 @@
 package com.revature.controllers;
 
+import java.util.List;
+
 import com.google.gson.Gson;
 import com.revature.models.Cocktail;
 import com.revature.models.Favorite;
+import com.revature.models.Review;
 import com.revature.models.ReviewDTO;
 import com.revature.models.User;
 import com.revature.services.FavoriteService;
@@ -35,5 +38,28 @@ public class FavoriteController {
 				ctx.status(403);
 			}
 		};
+		
+		
+		
+	public Handler userfavs = (ctx) -> {
+			
+		if(ctx.req.getSession(false) != null) {
+				
+			User user = ctx.bodyAsClass(User.class);
+				
+			List<Favorite> userFavs = fs.viewFavorites(user);
+				
+			Gson gson = new Gson();
+				
+			String favorites = gson.toJson(userFavs);
+				
+			ctx.result(favorites);
+			ctx.status(200);
+				
+		} else {
+			ctx.status(403);
+		}
+			
+	};
 
 }

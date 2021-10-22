@@ -61,6 +61,7 @@ public class Driver {
 		
 		app.post("/addcocktail", cc.addcocktail);
 		app.post("/addfavorite", fc.addfavorite);
+		app.post("/viewfavorites", fc.userfavs);
 		app.post("/addreview", rvc.addreview);
 		app.get("/allreviews", rvc.getallreviews);
 		app.post("/reviewsbyuser", rvc.reviewsbyuser);
