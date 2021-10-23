@@ -10,6 +10,8 @@ public interface UserInterface {
 	
 	public User userLogin(String username);
 	
+	public User findUserByUserid(int userid);
+
 	public User findUserByUsername(String username);
 	
 	public User findUserByEmail(String email);

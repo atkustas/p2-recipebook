@@ -14,6 +14,7 @@ public class UserDao implements UserInterface {
 		try(Session ses = HibernateUtil.getSession()){
 			
 			ses.save(userInput);
+
 			
 		} catch(Exception e) {
 			System.out.println("User addition failed.");
@@ -49,6 +50,18 @@ public class UserDao implements UserInterface {
 		
 	}
 
+	@Override
+	public User findUserByUserid(int userid) {
+		Session ses = HibernateUtil.getSession();
+		
+		User user = ses.get(User.class, userid);
+		
+		HibernateUtil.closeSession();
+		
+		return user;
+	}
+
+	@Override
 	public User findUserByUsername(String username) {
 		
 		int tempId = 0;
@@ -62,7 +75,6 @@ public class UserDao implements UserInterface {
 			System.out.println(u);
 			Boolean areEqual = 	username.equals(u.getUsername());
 			if(areEqual) {
-			
 				User temp = u;
 				tempId = temp.getUser_id();
 				
@@ -79,7 +91,7 @@ public class UserDao implements UserInterface {
 		return user;
 	}
 	
-	
+	@Override
 	public User findUserByEmail(String email) {
 		
 		int tempId = 0;
@@ -112,6 +124,7 @@ public class UserDao implements UserInterface {
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<User> findAllUsers() {
 
 		Session ses = HibernateUtil.getSession();
@@ -137,6 +150,7 @@ public class UserDao implements UserInterface {
 		Session ses = HibernateUtil.getSession();
 			
 		List<User> user = ses.createQuery("FROM User WHERE username = '" + username + "' AND password = '" + password + "'").list();
+		
 		HibernateUtil.closeSession();
 		
 		return user;
