@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import com.revature.utils.HibernateUtil;
 import com.revature.models.Cocktail;
 
+//GOOD VERSION OF COCKTAILDAO
 
 public class CocktailDao implements CocktailInterface{
 	Logger log = LogManager.getLogger(CocktailDao.class);
