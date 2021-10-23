@@ -1,0 +1,55 @@
+
+
+<div id="MainConRegs" class="container">
+<div id="EmpMasterForm">
+  <!--*ngIf="greeterDiv"-->
+  <form id="empupdateApp" class="empupdateForm" action="#" method="post" onsubmit="newTicket();return false">
+
+<div>
+
+<h3>Reimbursement Form</h3>
+<br>
+<p>Enter the details of your Reimbursement Request using the form below. </p>
+</div>
+
+      <div id="empform1" class="form-group">
+          <label for="FormControlInputAmt">Amount ($)</label><br>
+          <input type="number" class="form-control" name="amount" id="EmpFormControlInputAmt" placeholder="($$)" [(ngModel)]="amount"/><br>
+      </div>
+
+
+      <div id="empform2" class="form-group">
+          <label for="FormControlFile1">Upload Receipt</label><br>
+          <p>
+            (This is not required)
+          </p>
+          <input type="file" class="form-control-file" id="EmpFormControlFile2"><br>
+      </div>
+
+      <div id="empform3" class="form-group">
+          <label for="FormControlTextarea1">Enter a short description of your request.</label>
+          <br><textarea class="form-control" id="EmpFormControlTextarea1" rows="3"></textarea>
+          <br>
+      </div>
+
+    <div id="empform5" class="form-group">
+      <label for="exampleFormControlSelect1">Reimbursement Type</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Business</option>
+        <option>Travel</option>
+        <option>Medical</option>
+        <option>Other</option>
+      </select>
+      <br>
+  </div>
+
+      <button id="empsubForm" (click)="newTicket()" class="btn btn-primary">Submit</button>
+      <!-- (click)="newTicket()" -->
+
+  </form>
+
+</div>
+
+<!-- <h2 *ngIf="amount" id="Welcomeh2" style="color: crimson;" [hidden]="Welcomeh2Tog">Welcome, {{name}}</h2> -->
+
+</div>

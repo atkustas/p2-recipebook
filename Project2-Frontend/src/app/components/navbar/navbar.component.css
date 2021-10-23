@@ -1,0 +1,15 @@
+#navbar{overflow: hidden; background-color: darkviolet;}
+
+#nav-item:hover{background-color: deeppink; color: gold;}
+#navbarnav{color: gold;}
+
+
+#searchbar input[type=text]{float: left; padding: 10px; border: indigo; margin-top: 8px; margin-left: 16px; font-size: 20px;}
+#searchButton{color: ivory; background-color: indigo;}
+
+#explore{background-color: rgb(55, 4, 77); font-size: 20px; color: fuchsia;}
+
+#searchbar input[type=text]{float: left; padding: 5px; border: mediumorchid; margin-top: 4px; margin-left: 8px; font-size: 20px;}
+
+#explore{background-color: darkviolet; display: inline; font-size: 40px;}
+

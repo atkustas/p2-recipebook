@@ -1,0 +1,153 @@
+<app-navbar></app-navbar>
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">The Mixologist's Cookbook</h1>
+        <p class="lead text-muted">A database for your current favorite drinks, as well as your future favorite drinks. Explore and expand your cocktail horizons</p>
+        <p>
+            <input type="search" id="form1" class="w-25" [(ngModel)]="input" />
+            <br>
+          <button class="btn btn-secondary my-2" (click)="getByName">Search by Drink Name</button>
+          <button class="btn btn-secondary my-2">Search by Ingredient</button>
+        </p>
+        <h4>Not sure what you are looking for? Check out some random drinks below for inspiration </h4>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-dark">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17c9fb30e74%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17c9fb30e74%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.7109375%22%20y%3D%22120.15%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+              <div class="card-body">
+                <div>
+                    <h2>This is my drink name</h2>
+                  </div>
+                <p class="card-text">
+                    <div class="stats mt-2">
+                        <div class="d-flex justify-content-between"><span>Ingredient 1</span><span>Measurement 1</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 2</span><span>Measurement 2</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 3</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 4</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 5</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 6</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 7</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 8</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 9</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 10</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 11</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 12</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 13</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 14</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 15</span><span>Measurement 3</span></div>
+                      </div>
+                      <br>
+                      <div class="card-text">
+                        <p>
+                          This is where I am going to put the instructions for making the drink
+                        </p>
+                      </div>  
+                
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Add to Favorites</button>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow" *ngIf="cocktail">
+              <img class="card-img-top"  src={{cocktail.strDrinkThumb}}  style="height: 225px; width: 100%; display: block;">
+              <div class="card-body">
+                <div>
+                    <h2>{{cocktail.strDrink}}</h2>
+                  </div>
+                <p class="card-text">
+                    <div class="stats mt-2">
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient1}}</span><span>{{cocktail.strMeasure1}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient2}}</span><span>{{cocktail.strMeasure2}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient3}}</span><span>{{cocktail.strMeasure3}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient4}}</span><span>{{cocktail.strMeasure4}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient5}}</span><span>{{cocktail.strMeasure5}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient6}}</span><span>{{cocktail.strMeasure6}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient7}}</span><span>{{cocktail.strMeasure7}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient8}}</span><span>{{cocktail.strMeasure8}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient9}}</span><span>{{cocktail.strMeasure9}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient10}}</span><span>{{cocktail.strMeasure10}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient11}}</span><span>{{cocktail.strMeasure12}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient12}}</span><span>{{cocktail.strMeasure13}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient13}}</span><span>{{cocktail.strMeasure14}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient14}}</span><span>{{cocktail.strMeasure15}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.strIngredient15}}</span><span>{{cocktail.strMeasure16}}</span></div>
+                      </div>
+                      <br>
+                      <div class="card-text">
+                        <p>
+                          {{cocktail.strInstructions}}
+                        </p>
+                      </div>  
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Add to Favorites</button>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17c9fb30e79%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17c9fb30e79%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.7109375%22%20y%3D%22120.15%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+              <div class="card-body">
+                <div>
+                    <h2>This is my drink name</h2>
+                  </div>
+                <p class="card-text">
+                    <div class="stats mt-2">
+                        <div class="d-flex justify-content-between"><span>Ingredient 1</span><span>Measurement 1</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 2</span><span>Measurement 2</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 3</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 4</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 5</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 6</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 7</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 8</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 9</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 10</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 11</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 12</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 13</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 14</span><span>Measurement 3</span></div>
+                        <div class="d-flex justify-content-between"><span>Ingredient 15</span><span>Measurement 3</span></div>
+                      </div>
+                      <br>
+                      <div class="card-text">
+                        <p>
+                          This is where I am going to put the instructions for making the drink
+                        </p>
+                      </div>  
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Add to Favorites</button>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+  </main>

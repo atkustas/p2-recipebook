@@ -1,0 +1,13 @@
+body, html{
+    height: 100%;
+}
+
+#welcome{
+    border-style: solid;
+    border-radius: .5em;
+}
+
+.bg{
+    background-image: url('../../../assets/BarNav1.jpg');
+    height: 100%;
+}
