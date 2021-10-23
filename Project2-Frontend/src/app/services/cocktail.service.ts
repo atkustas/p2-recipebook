@@ -6,7 +6,7 @@ import { Cocktail } from '../models/cocktail';
 @Injectable({
   providedIn: 'root'
 })
-
+//please let me merge now
 export class CocktailService {
 
   constructor(private http:HttpClient) { }
