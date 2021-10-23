@@ -3,9 +3,20 @@ package com.revature.models;
 public class ReviewDTO {
 
 	private String review;
-	private int drink;
+	private String drink;
 	private int user_id;
+	private int drink_id;
 	
+
+	public int getDrink_id() {
+		return drink_id;
+	}
+
+
+	public void setDrink_id(int drink_id) {
+		this.drink_id = drink_id;
+	}
+
 
 	public ReviewDTO() {
 		super();
@@ -13,11 +24,13 @@ public class ReviewDTO {
 	}
 
 
-	public ReviewDTO(String review, int drink, int user_id) {
+	public ReviewDTO(String review, String drink, int user_id,int drink_id) {
 		super();
 		this.review = review;
 		this.drink = drink;
 		this.user_id = user_id;
+		this.drink_id = drink_id;
+
 	}
 
 
@@ -31,12 +44,12 @@ public class ReviewDTO {
 	}
 
 
-	public int getDrink() {
+	public String getDrink() {
 		return drink;
 	}
 
 
-	public void setDrink(int drink) {
+	public void setDrink(String drink) {
 		this.drink = drink;
 	}
 

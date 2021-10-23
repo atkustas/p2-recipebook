@@ -14,4 +14,6 @@ public interface CocktailInterface {
 	
 	public List<Cocktail> getCocktailByName(String name);
 
+	Cocktail findDrinkByDrinkName(String drink);
+
 }

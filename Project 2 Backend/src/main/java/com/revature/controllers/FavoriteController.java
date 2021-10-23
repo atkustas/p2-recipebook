@@ -25,7 +25,7 @@ public class FavoriteController {
 				Gson gson = new Gson();
 				
 				ReviewDTO rDTO = gson.fromJson(body, ReviewDTO.class);
-				Cocktail rDrink = rs.getDrinkById(rDTO.getDrink());
+				Cocktail rDrink = rs.findDrinkByDrinkName(rDTO.getDrink());
 				User rUser = rs.getUserById(rDTO.getUser_id());
 				
 				Favorite r = new Favorite(rUser, rDrink);

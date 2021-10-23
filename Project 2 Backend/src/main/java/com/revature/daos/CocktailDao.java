@@ -59,6 +59,14 @@ public class CocktailDao implements CocktailInterface{
 		
 	}
 
+	@Override
+	public Cocktail findDrinkByDrinkName(String drink) {
+		Session ses = HibernateUtil.getSession();
+		Cocktail d = (Cocktail) ses.createQuery("FROM Cocktail WHERE drink = \'" + drink + "\'").uniqueResult();
+		HibernateUtil.closeSession();
+		return d;
+	}
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Cocktail> getCocktailByName(String drink) {

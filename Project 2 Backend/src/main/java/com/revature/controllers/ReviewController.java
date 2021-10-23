@@ -29,7 +29,7 @@ public class ReviewController {
 			Gson gson = new Gson();
 			
 			ReviewDTO rDTO = gson.fromJson(body, ReviewDTO.class);
-			Cocktail rDrink = rs.getDrinkById(rDTO.getDrink());
+			Cocktail rDrink = rs.findDrinkByDrinkName(rDTO.getDrink());
 			User rUser = rs.getUserById(rDTO.getUser_id());
 
 			Calendar now = Calendar.getInstance();

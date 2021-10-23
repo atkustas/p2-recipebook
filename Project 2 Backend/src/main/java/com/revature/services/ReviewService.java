@@ -19,7 +19,11 @@ public class ReviewService {
 	UserDao uDao = new UserDao();
 	Logger log = LogManager.getLogger(ReviewService.class);
 
-	
+	public Cocktail findDrinkByDrinkName(String drink) {
+		Cocktail d = cDao.findDrinkByDrinkName(drink);
+		return d;
+	}
+
 	public Cocktail getDrinkById(int id) {
 		Cocktail drink = cDao.findDrinkById(id);
 		return drink;
