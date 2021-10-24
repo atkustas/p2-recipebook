@@ -1,17 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-//added for jwt webtoken 
-import {Request, Response} from "express";
-import * as express from 'express';
+import { LoginService } from 'src/app/login.service';
+import { User } from 'src/app/models/user';
 
-//added for jwt webtoken
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-
-//added for jwt webtoken
-import * as jwt from 'jsonwebtoken';
-import *  as fs from "fs";
-
-const app: Application = express();
 
 @Component({
   selector: 'app-welcome',
@@ -20,7 +10,10 @@ const app: Application = express();
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ps: LoginService) { }
+
+  public User:any = null;
+  public input:number = 0;
 
   ngOnInit(): void {
   }
@@ -29,7 +22,7 @@ export class WelcomeComponent implements OnInit {
 
 //add URL variable so that we can add fetch request to backend
 const urllogin = "http://localhost:8090/login"
-async function loginFunc() { //add loginFunc
+/*async function loginFunc() { //add loginFunc
    
   let usern = document.getElementById("username")
   let userp = document.getElementById("password")
@@ -47,11 +40,21 @@ async function loginFunc() { //add loginFunc
   })
 
   console.log(response.status)
-
+}*/
+loginFunc():void {
+  this.ps.login(this.input).subscribe(
+    (data:any) => {
+      this.user = data;
+      console.log(LoginService);
+    },
+    () => {
+      this.login = null;
+    }
+  )
 }
 
 //add Registration function
-const urlreg = "http://localhost:8090/register"
+/*const urlreg = "http://localhost:8090/register"
 async function regiFunc() {
   let usern = document.getElementById("username")
   let email = document.getElementById("email")
@@ -71,7 +74,18 @@ async function regiFunc() {
   })
 
   console.log(response.status)
+}*/
+
+regFunc(): void{
+  this.ps.register(this.input).subscribe(
+    (data:any) => {
+      this.register = data; 
+      console.log(this.register)
+    },
+    () => {
+      this.register = null;
+    }
+  )
 }
 
-//code for webtoken
 

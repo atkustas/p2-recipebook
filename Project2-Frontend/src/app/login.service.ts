@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { variable } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { User } from './models/user';
 
 @Injectable({
@@ -14,13 +14,13 @@ export class LoginService {
     logurl = "http://localhost:8090/login"
 
    login(username:String, password:String){
-     return this.http.post<User>(this.logurl, {username, password})
+     return this.http.post(this.logurl, {username, password}) as Observable<User>
    }
 
    regurl = "http://localhost:8090/register"
 
    register(username:String, email:String, password:String){
-     return this.http.post<User>(this.regurl, {username, email, password})
+     return this.http.post(this.regurl, {username, email, password}) as Observable<User>
    }
 }
 

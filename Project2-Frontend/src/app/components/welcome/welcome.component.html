@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="welcome.component.css">
+		<link rel="function"  href="welcome.component.ts">
     </head>
 <body class="bg">
   <div class="container w-50">
@@ -29,7 +30,7 @@
 						<input type="password" class="form-control" placeholder="password">
 					</div>
 					<div class="form-group text-center">
-						<button type="submit" class="btn-dark login_btn">Login</button>
+						<button type="submit" class="btn-dark login_btn" (click)= "loginFunc()">Login</button>
 					</div>
 				</form>
 			</div>
