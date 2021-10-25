@@ -25,22 +25,18 @@ export class WelcomeComponent implements OnInit {
 //add URL variable so that we can add fetch request to backend
 public urllogin:String = "http://localhost:8090/login"
 /*async function loginFunc() { //add loginFunc
-
   let usern = document.getElementById("username")
   let userp = document.getElementById("password")
-
   let user = {
     usern,
    userp
   }
   console.log(user)
-
   let response = await fetch(urllogin, {
     method: "POST",
     body: JSON.stringify(user),
     credentials: "include"
   })
-
   console.log(response.status)
 }*/
 
@@ -49,14 +45,15 @@ public test:any;
 loginFunc(): void {
   console.log("in loginfuc1");
   this.ps.login(this.userName,this.passWord).subscribe(
-    (data:any) => {
+    /*(data:any) => {
       console.log("in loginfuc2");
       console.log(data);
 
       this.test = data;
       console.log(this.test);
       // console.log(LoginService);
-    },
+    },*/
+
     () => {
       console.log("in loginfuc2 fail");
       this.user = null;
@@ -66,26 +63,26 @@ loginFunc(): void {
   // console.log("in loginfucFIN");
 }
 
+
+
+
 //add Registration function
 /*const urlreg = "http://localhost:8090/register"
 async function regiFunc() {
   let usern = document.getElementById("username")
   let email = document.getElementById("email")
   let userp = document.getElementById("password")
-
   let usreg = {
     usern,
     email,
     userp
   }
   console.log(usreg)
-
   let response = await fetch(urlreg, {
     method: "POST",
     body: JSON.stringify(usreg),
     credentials: "include"
   })
-
   console.log(response.status)
 }*/
 
@@ -101,4 +98,3 @@ async function regiFunc() {
 //   )
 // }
 }
-
