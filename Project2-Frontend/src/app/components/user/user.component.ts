@@ -15,23 +15,23 @@ export class UserComponent implements OnInit {
   public user:any;
 
   ngOnInit(): void {
-    this.getUserInfo();
+    // this.getUserInfo();
   }
 
-  getUserInfo(): void {
-    this.ls.getUser(this.userName, this.passWord).subscribe(
-       (data:any) =>{
-         this.user = data;
+  // getUserInfo(): void {
+  //   this.ls.getUser(this.userName, this.passWord).subscribe(
+  //      (data:any) =>{
+  //        this.user = data;
 
-         console.log(this.user)
+  //        console.log(this.user)
          
-       },
-       () => {
-         this.user = null;
-         console.log("NO USER");
-       }
-     )
-   }
+  //      },
+  //      () => {
+  //        this.user = null;
+  //        console.log("NO USER");
+  //      }
+  //    )
+  //  }
 
   //  userInfo():void {
   //   this.ps.getUser(this.userName, this.passWord).subscribe(

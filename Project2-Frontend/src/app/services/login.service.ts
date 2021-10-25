@@ -4,6 +4,7 @@ import { from, Observable, of } from 'rxjs';
 import {catchError, tap} from 'rxjs/internal/operators'
 import { User } from '../models/user';
 import { Jwt } from '../models/jwt';
+import { UserComponent } from '../components/user/user.component';
 
 /*const httpOptions = {
   Headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -35,15 +36,31 @@ export class LoginService {
   }*/
   logurl = "http://localhost:8090/login"
 
-   login(username:String, password:String):Observable<Jwt> {
-     return this.http.post(this.logurl, {username, password}) as Observable<Jwt>
-   }
+   login(username:String, password:String):Observable<any> {
+    const encodedCredentials = btoa(`${username}:${password}`);
+    const httpOptions = {
+        headers: new HttpHeaders({
+            'Authorization': `Basic ${encodedCredentials}`
+        })
+    }; 
+    return this.http.post(this.logurl, {username, password}, {withCredentials:true}) as Observable<any>
+
+   };
 
   usurl = "http://localhost:8090/returnuser"
 
-   getUser(username:String, password:String):Observable<User>{
-     return this.http.post(this.usurl, {username, password}) as Observable<User>
-   }
+  // getUser(username:String, password:String):Observable<User>{
+  //   const jwt = localStorage.getItem('token');
+  //   console.log("Heres the JWT: " +jwt)
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Authorization': `Basic ${jwt}`
+  //     })
+  //   }
+  //   return this.http.post(this.usurl, {username, password}, {withCredentials:true}) as Observable<User>
+  // }
+
+   
    
 
   regurl = "http://localhost:8090/register"

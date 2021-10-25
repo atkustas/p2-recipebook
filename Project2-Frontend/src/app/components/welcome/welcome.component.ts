@@ -45,43 +45,44 @@ public urllogin:String = "http://localhost:8090/login"
   console.log(response.status)
 }*/
 
-public jwt:any;
+public package:any;
 
 loginFunc(): void {
   console.log("in loginfunc1");
   this.ls.login(this.userName,this.passWord).subscribe(
-    (data:Jwt) => {
+    (data:any) => {
 
-      this.jwt = data;
+      this.package = data;
 
-      console.log("in loginFunc, should have JWT");
-      console.log(this.jwt);
-      localStorage.setItem('token', this.jwt);
+      console.log("in loginFunc, should have Package");
+      console.log(this.package);
+      localStorage.setItem('token', this.package.jwt);
+      localStorage.setItem('user', this.package.user);
     },
 
     () => {
       console.log("in loginFunc1 fail");
-      this.jwt = null;
+      this.package = null;
     }
   )
 
-  this.getUserInfo();
+  // this.getUserInfo();
 }
 
-getUserInfo(): void {
-  this.ls.getUser(this.userName, this.passWord).subscribe(
-     (data:any) =>{
-       this.user = data;
+// getUserInfo(): void {
+//   this.ls.getUser(this.userName, this.passWord).subscribe(
+//      (data:any) =>{
+//        this.user = data;
 
-       console.log(this.user)
+//        console.log(this.user)
        
-     },
-     () => {
-       this.user = null;
-       console.log("NO USER");
-     }
-   )
- }
+//      },
+//      () => {
+//        this.user = null;
+//        console.log("NO USER");
+//      }
+//    )
+//  }
 
 canActivate(route: ActivatedRouteSnapshot, state:RouterStateSnapshot){
   let currentJwt = this.ls.login(this.userName, this.passWord).subscribe(
