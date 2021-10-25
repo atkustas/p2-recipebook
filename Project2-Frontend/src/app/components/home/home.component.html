@@ -4,7 +4,7 @@
 
     <section class="jumbotron text-center">
       <div class="container">
-        <button id="testingImgBut" (click)="getRanDrink()">Test for img</button>
+        
         <!-- <img src={{cocktail.drinks[0].strDrinkThumb}}> -->
         <h1 class="jumbotron-heading">The Mixologist's Cookbook</h1>
         <p class="lead text-muted">A database for your current favorite drinks, as well as your future favorite drinks. Explore and expand your cocktail horizons</p>
@@ -14,8 +14,9 @@
           <button class="btn btn-secondary my-2" (click)= "getByName(input)">Search by Drink Name</button>
           <button class="btn btn-secondary my-2">Search by Ingredient</button>
         </p>
-        <h4>Not sure what you are looking for? Check out some random drinks below for inspiration </h4>
+        <h4>Not sure what you are looking for? Click the button below for a some inspiration </h4>
       </div>
+      <button id="testingImgBut" class="btn btn-secondary"(click)="getRanDrink()">Random Drink</button>
     </section>
 
     <div class="album py-5 bg-dark">
