@@ -16,6 +16,12 @@ export class CocktailService {
   }
 
   getrandomCocktail():Observable<Cocktail>{
-    return this.http.get("www.thecocktaildb.com/api/json/v1/1/random.php") as Observable<Cocktail>
+
+    console.log("https:thecocktaildb.com/api/json/v1/1/random.php" as unknown as Observable<Cocktail>);
+    console.log(this.http.get("https:thecocktaildb.com/api/json/v1/1/random.php") as Observable<Cocktail>);
+    console.log(this.http)
+    console.log(this.http.get)
+
+    return this.http.get("https:thecocktaildb.com/api/json/v1/1/random.php") as Observable<Cocktail>
   }
 }

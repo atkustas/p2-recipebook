@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   constructor(private ps:CocktailService) { }
 
   ngOnInit(): void {
-    // this.ps.getrandomCocktail().subscribe(
+   // this.ps.getrandomCocktail().subscribe(
     //   (data:any) =>{
     //     this.cocktail = data;
     //     console.log(this.cocktail)
@@ -26,7 +26,27 @@ export class HomeComponent implements OnInit {
     //     console.log("Whoops no drink for you");
     //   }
     // )
+    this.getRanDrink();
   }
+
+
+  // getRanDrink();
+
+  getRanDrink(): void {
+    this.ps.getrandomCocktail().subscribe(
+       (data:any) =>{
+         this.cocktail = data;
+         console.log(this.cocktail)
+         console.log(this.cocktail.drinks)
+         console.log(this.cocktail.drinks[0])
+         console.log(this.cocktail.drinks[0].strDrinkThumb)
+       },
+       () => {
+         this.cocktail = null;
+         console.log("Whoops no drink for you");
+       }
+     )
+   }
 
   getByName(): void{
     this.ps.getCocktailFromApi(this.input).subscribe(
