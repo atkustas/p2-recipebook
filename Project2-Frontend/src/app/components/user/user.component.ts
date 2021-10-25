@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/login.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-user',
@@ -10,8 +10,8 @@ export class UserComponent implements OnInit {
 
   constructor(private ls:LoginService) { }
 
-  public userName:String = '0';
-  public passWord:String = "0";
+  public userName:String = '';
+  public passWord:String = '';
   public user:any;
 
   ngOnInit(): void {
@@ -32,5 +32,17 @@ export class UserComponent implements OnInit {
        }
      )
    }
+
+  //  userInfo():void {
+  //   this.ps.getUser(this.userName, this.passWord).subscribe(
+  //     (data2:User) => {
+  
+  //       this.user = data2;
+  //       console.log("here's the user");
+  //       console.log(this.user);
+  //     }
+  //   )
+  
+  // }
 
 }

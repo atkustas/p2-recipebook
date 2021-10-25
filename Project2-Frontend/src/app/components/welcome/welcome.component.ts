@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/login.service';
+import { LoginService } from 'src/app/services/login.service';
+import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
 import { User } from 'src/app/models/user';
 import { Jwt } from 'src/app/models/jwt';
 
@@ -9,14 +10,17 @@ import { Jwt } from 'src/app/models/jwt';
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.css']
 })
-export class WelcomeComponent implements OnInit {
+export class WelcomeComponent implements OnInit, CanActivate {
 
-  constructor(private ps: LoginService) { }
+  constructor(
+    private ls: LoginService,
+    private router:Router
+    ) {}
 
-  public user:any = null;
-  public userName:String = '0';
-  public passWord:String = "0";
-  public email:String = ""
+  public user:any;
+  public userName:String = '';
+  public passWord:String = '';
+  public email:String = '';
 
   ngOnInit(): void {
   }
@@ -45,19 +49,53 @@ public jwt:any;
 
 loginFunc(): void {
   console.log("in loginfunc1");
-  this.ps.login(this.userName,this.passWord).subscribe(
-    (data:any) => {
+  this.ls.login(this.userName,this.passWord).subscribe(
+    (data:Jwt) => {
 
       this.jwt = data;
 
       console.log("in loginFunc, should have JWT");
       console.log(this.jwt);
+      localStorage.setItem('token', this.jwt);
     },
+
     () => {
       console.log("in loginFunc1 fail");
       this.jwt = null;
     }
   )
+
+  this.getUserInfo();
+}
+
+getUserInfo(): void {
+  this.ls.getUser(this.userName, this.passWord).subscribe(
+     (data:any) =>{
+       this.user = data;
+
+       console.log(this.user)
+       
+     },
+     () => {
+       this.user = null;
+       console.log("NO USER");
+     }
+   )
+ }
+
+canActivate(route: ActivatedRouteSnapshot, state:RouterStateSnapshot){
+  let currentJwt = this.ls.login(this.userName, this.passWord).subscribe(
+      (data:any) => {
+          currentJwt = data;
+      }
+  );
+
+  if(currentJwt){
+      return true;
+  }
+
+  this.router.navigate([""], {queryParams: { returnUrl : state.url }});
+  return false;
 }
 
 

@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { from, Observable, of } from 'rxjs';
 import {catchError, tap} from 'rxjs/internal/operators'
-import { User } from './models/user';
-import { Jwt } from './models/jwt';
+import { User } from '../models/user';
+import { Jwt } from '../models/jwt';
 
 /*const httpOptions = {
   Headers: new HttpHeaders({'Content-Type': 'application/json'})

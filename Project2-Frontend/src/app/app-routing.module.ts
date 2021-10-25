@@ -7,6 +7,8 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ReviewComponent } from './components/review/review.component';
 import { UserComponent } from './components/user/user.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+
+
 const routes: Routes = [
 
   {
@@ -32,11 +34,13 @@ const routes: Routes = [
   {
     path: "",
     component: WelcomeComponent
+    
   },
 
   {
     path: "home",
-    component: HomeComponent
+    component: HomeComponent,
+    // canActivate:[WelcomeComponent]
   }
 
 ];

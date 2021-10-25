@@ -1,7 +1,7 @@
 export class Jwt {
 
     constructor(
-        private jwt:String
+        public jwt:any
     ){}
     
 }
