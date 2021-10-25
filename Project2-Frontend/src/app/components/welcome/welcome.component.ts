@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/login.service';
 import { User } from 'src/app/models/user';
+import { Jwt } from 'src/app/models/jwt';
 
 
 @Component({
@@ -40,27 +41,23 @@ public urllogin:String = "http://localhost:8090/login"
   console.log(response.status)
 }*/
 
-public test:any;
+public jwt:any;
 
 loginFunc(): void {
-  console.log("in loginfuc1");
+  console.log("in loginfunc1");
   this.ps.login(this.userName,this.passWord).subscribe(
-    /*(data:any) => {
-      console.log("in loginfuc2");
-      console.log(data);
+    (data:any) => {
 
-      this.test = data;
-      console.log(this.test);
-      // console.log(LoginService);
-    },*/
+      this.jwt = data;
 
+      console.log("in loginFunc, should have JWT");
+      console.log(this.jwt);
+    },
     () => {
-      console.log("in loginfuc2 fail");
-      this.user = null;
+      console.log("in loginFunc1 fail");
+      this.jwt = null;
     }
   )
-
-  // console.log("in loginfucFIN");
 }
 
 
