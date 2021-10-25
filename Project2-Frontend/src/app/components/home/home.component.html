@@ -12,7 +12,7 @@
             <input type="search" id="form1" class="w-25" [(ngModel)]="input" />
             <br>
           <button class="btn btn-secondary my-2" (click)= "getByName(input)">Search by Drink Name</button>
-          <button class="btn btn-secondary my-2">Search by Ingredient</button>
+          <button class="btn btn-secondary my-2" (click)="getByIngredient(input)">Search by Ingredient</button>
         </p>
         <h4>Not sure what you are looking for? Click the button below for a some inspiration </h4>
       </div>
@@ -65,35 +65,35 @@
               </div>
             </div>
           </div>
-          <!-- <div class="col-md-4">
-            <div class="card mb-4 box-shadow" *ngIf="cocktail">
-           <img class="card-img-top"  src={{cocktail.drinks[0].strDrinkThumb}}  style="height: 225px; width: 100%; display: block;">
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow" *ngIf="cocktail.drinks.length > 1">
+           <img class="card-img-top"  src={{cocktail.drinks[1].strDrinkThumb}}  style="height: 225px; width: 100%; display: block;">
               <div class="card-body">
                 <div>
-                    <h2>{{cocktail.drinks[0].strDrink}}</h2>
+                    <h2>{{cocktail.drinks[1].strDrink}}</h2>
                   </div>
                 <p class="card-text">
                     <div class="stats mt-2">
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient1}}</span><span>{{cocktail.drinks[0].strMeasure1}}</span></div>
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient2}}</span><span>{{cocktail.drinks[0].strMeasure2}}</span></div>
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient3}}</span><span>{{cocktail.drinks[0].strMeasure3}}</span></div>
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient4}}</span><span>{{cocktail.drinks[0].strMeasure4}}</span></div>
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient5}}</span><span>{{cocktail.drinks[0].strMeasure5}}</span></div>
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient6}}</span><span>{{cocktail.drinks[0].strMeasure6}}</span></div>
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient7}}</span><span>{{cocktail.drinks[0].strMeasure7}}</span></div>
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient8}}</span><span>{{cocktail.drinks[0].strMeasure8}}</span></div>
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient9}}</span><span>{{cocktail.drinks[0].strMeasure9}}</span></div>
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient10}}</span><span>{{cocktail.drinks[0].strMeasure10}}</span></div>
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient11}}</span><span>{{cocktail.drinks[0].strMeasure12}}</span></div>
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient12}}</span><span>{{cocktail.drinks[0].strMeasure13}}</span></div>
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient13}}</span><span>{{cocktail.drinks[0].strMeasure14}}</span></div>
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient14}}</span><span>{{cocktail.drinks[0].strMeasure15}}</span></div>
-                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient15}}</span><span>{{cocktail.drinks[0].strMeasure16}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient1}}</span><span>{{cocktail.drinks[1].strMeasure1}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient2}}</span><span>{{cocktail.drinks[1].strMeasure2}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient3}}</span><span>{{cocktail.drinks[1].strMeasure3}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient4}}</span><span>{{cocktail.drinks[1].strMeasure4}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient5}}</span><span>{{cocktail.drinks[1].strMeasure5}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient6}}</span><span>{{cocktail.drinks[1].strMeasure6}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient7}}</span><span>{{cocktail.drinks[1].strMeasure7}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient8}}</span><span>{{cocktail.drinks[1].strMeasure8}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient9}}</span><span>{{cocktail.drinks[1].strMeasure9}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient10}}</span><span>{{cocktail.drinks[1].strMeasure10}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient11}}</span><span>{{cocktail.drinks[1].strMeasure12}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient12}}</span><span>{{cocktail.drinks[1].strMeasure13}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient13}}</span><span>{{cocktail.drinks[1].strMeasure14}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient14}}</span><span>{{cocktail.drinks[1].strMeasure15}}</span></div>
+                        <div class="d-flex justify-content-between"><span>{{cocktail.drinks[1].strIngredient15}}</span><span>{{cocktail.drinks[1].strMeasure16}}</span></div>
                       </div>
                       <br>
                       <div class="card-text">
                         <p>
-                          {{cocktail.drinks[0].strInstructions}}
+                          {{cocktail.drinks[1].strInstructions}}
                         </p>
                       </div>
                 <div class="d-flex justify-content-between align-items-center">
@@ -108,29 +108,29 @@
           </div>
           <div class="col-md-4">
 
-                  <div class="card mb-4 box-shadow" *ngIf="cocktail">
+                  <div class="card mb-4 box-shadow" *ngIf="cocktail.drinks.length > 2">
                     <img class="card-img-top"  src={{cocktail.drinks[0].strDrinkThumb}}  style="height: 225px; width: 100%; display: block;">
                        <div class="card-body">
                          <div>
-                             <h2>{{cocktail.drinks[0].strDrink}}</h2>
+                             <h2>{{cocktail.drinks[2].strDrink}}</h2>
                            </div>
                 <p class="card-text">
                     <div class="stats mt-2">
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient1}}</span><span>{{cocktail.drinks[0].strMeasure1}}</span></div>
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient2}}</span><span>{{cocktail.drinks[0].strMeasure2}}</span></div>
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient3}}</span><span>{{cocktail.drinks[0].strMeasure3}}</span></div>
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient4}}</span><span>{{cocktail.drinks[0].strMeasure4}}</span></div>
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient5}}</span><span>{{cocktail.drinks[0].strMeasure5}}</span></div>
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient6}}</span><span>{{cocktail.drinks[0].strMeasure6}}</span></div>
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient7}}</span><span>{{cocktail.drinks[0].strMeasure7}}</span></div>
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient8}}</span><span>{{cocktail.drinks[0].strMeasure8}}</span></div>
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient9}}</span><span>{{cocktail.drinks[0].strMeasure9}}</span></div>
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient10}}</span><span>{{cocktail.drinks[0].strMeasure10}}</span></div>
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient11}}</span><span>{{cocktail.drinks[0].strMeasure12}}</span></div>
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient12}}</span><span>{{cocktail.drinks[0].strMeasure13}}</span></div>
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient13}}</span><span>{{cocktail.drinks[0].strMeasure14}}</span></div>
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient14}}</span><span>{{cocktail.drinks[0].strMeasure15}}</span></div>
-                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[0].strIngredient15}}</span><span>{{cocktail.drinks[0].strMeasure16}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient1}}</span><span>{{cocktail.drinks[2].strMeasure1}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient2}}</span><span>{{cocktail.drinks[2].strMeasure2}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient3}}</span><span>{{cocktail.drinks[2].strMeasure3}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient4}}</span><span>{{cocktail.drinks[2].strMeasure4}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient5}}</span><span>{{cocktail.drinks[2].strMeasure5}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient6}}</span><span>{{cocktail.drinks[2].strMeasure6}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient7}}</span><span>{{cocktail.drinks[2].strMeasure7}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient8}}</span><span>{{cocktail.drinks[2].strMeasure8}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient9}}</span><span>{{cocktail.drinks[2].strMeasure9}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient10}}</span><span>{{cocktail.drinks[2].strMeasure10}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient11}}</span><span>{{cocktail.drinks[2].strMeasure12}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient12}}</span><span>{{cocktail.drinks[2].strMeasure13}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient13}}</span><span>{{cocktail.drinks[2].strMeasure14}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient14}}</span><span>{{cocktail.drinks[2].strMeasure15}}</span></div>
+                      <div class="d-flex justify-content-between"><span>{{cocktail.drinks[2].strIngredient15}}</span><span>{{cocktail.drinks[2].strMeasure16}}</span></div>
                    </div>
                       <br>
                       <div class="card-text">
@@ -147,7 +147,7 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
 
 
         </div>

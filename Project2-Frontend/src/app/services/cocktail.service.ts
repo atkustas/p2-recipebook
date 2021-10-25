@@ -30,4 +30,9 @@ export class CocktailService {
 
     return this.http.get("https:thecocktaildb.com/api/json/v1/1/random.php") as Observable<Cocktail>
   }
+
+  getCocktailByIngredient(ingredient:String):Observable<Cocktail>{
+
+    return this.http.get("https:thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredient) as Observable<Cocktail>
+  }
 }

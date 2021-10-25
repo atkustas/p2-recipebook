@@ -81,4 +81,16 @@ export class HomeComponent implements OnInit {
       }
     )
   }
+
+  getByIngredient(input:String): void{
+    this.ps.getCocktailByIngredient(input).subscribe(
+      (data:any) => {
+        this.cocktail = data;
+      },
+      () => {
+        this.cocktail = null;
+        console.log("Whoops no drink for you")
+      }
+    )
+  }
 }
