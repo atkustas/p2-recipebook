@@ -1,55 +1,61 @@
+<app-navbar></app-navbar>
+
+<section class="vh-100 bg-image" style="background-image: url('https://mdbootstrap.com/img/Photos/new-templates/search-box/img4.jpg');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+              <form>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" [(ngModel)]="firstname"/>
+                  <label class="form-label" for="form3Example1cg">First Name</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" [(ngModel)]="lastname"/>
+                  <label class="form-label" for="form3Example1cg">Last Name</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" [(ngModel)]="email"/>
+                  <label class="form-label" for="form3Example3cg">Your Email</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" [(ngModel)]="dob"/>
+                  <label class="form-label" for="form3Example4cg">Age</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" [(ngModel)]="username"/>
+                  <label class="form-label" for="form3Example4cg">Username</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" [(ngModel)]="password"/>
+                  <label class="form-label" for="form3Example4cg">Password</label>
+                </div>
 
 
-<div id="MainConRegs" class="container" style="color: gold;">
-<div id="EmpMasterForm">
-  <!--*ngIf="greeterDiv"-->
-  <form id="empupdateApp" class="empupdateForm" action="#" method="post" onsubmit="newTicket();return false">
+              
 
-<div>
+                <div class="d-flex justify-content-center">
+                  <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                </div>
 
-<h3>Reimbursement Form</h3>
-<br>
-<p>Enter the details of your Reimbursement Request using the form below. </p>
-</div>
+                
 
-      <div id="empform1" class="form-group">
-          <label for="FormControlInputAmt">Amount ($)</label><br>
-          <input type="number" class="form-control" name="amount" id="EmpFormControlInputAmt" placeholder="($$)" [(ngModel)]="amount"/><br>
+              </form>
+
+            </div>
+          </div>
+        </div>
       </div>
-
-
-      <div id="empform2" class="form-group">
-          <label for="FormControlFile1">Upload Receipt</label><br>
-          <p>
-            (This is not required)
-          </p>
-          <input type="file" class="form-control-file" id="EmpFormControlFile2"><br>
-      </div>
-
-      <div id="empform3" class="form-group">
-          <label for="FormControlTextarea1">Enter a short description of your request.</label>
-          <br><textarea class="form-control" id="EmpFormControlTextarea1" rows="3"></textarea>
-          <br>
-      </div>
-
-    <div id="empform5" class="form-group">
-      <label for="exampleFormControlSelect1">Reimbursement Type</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>Business</option>
-        <option>Travel</option>
-        <option>Medical</option>
-        <option>Other</option>
-      </select>
-      <br>
+    </div>
   </div>
-
-      <button id="empsubForm" (click)="newTicket()" class="btn btn-primary">Submit</button>
-      <!-- (click)="newTicket()" -->
-
-  </form>
-
-</div>
-
-<!-- <h2 *ngIf="amount" id="Welcomeh2" style="color: crimson;" [hidden]="Welcomeh2Tog">Welcome, {{name}}</h2> -->
-
-</div>
+</section>
