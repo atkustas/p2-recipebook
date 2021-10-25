@@ -130,7 +130,7 @@ public class UserDao implements UserInterface {
 		Session ses = HibernateUtil.getSession();
 			
 		List<User> listOfUsers = ses.createQuery("FROM User").list();
-		HibernateUtil.closeSession();
+		
 		
 		//debugging
 		for(User u : listOfUsers) {
@@ -138,6 +138,8 @@ public class UserDao implements UserInterface {
 			System.out.println(u);
 		}
 			
+		HibernateUtil.closeSession();
+		
 		return listOfUsers;
 		
 		
