@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
+import { User } from 'src/app/models/user';
+import { Package } from 'src/app/models/package';
 
 @Component({
   selector: 'app-user',
@@ -13,36 +15,29 @@ export class UserComponent implements OnInit {
   public userName:String = '';
   public passWord:String = '';
   public user:any;
+  public package:any;
 
   ngOnInit(): void {
-    // this.getUserInfo();
+    this.getInfo();
+
   }
 
-  // getUserInfo(): void {
-  //   this.ls.getUser(this.userName, this.passWord).subscribe(
-  //      (data:any) =>{
-  //        this.user = data;
+  getInfo(): void{
+    // this.ls.login(this.userName, this.passWord).subscribe(
+    //   (data:any) => {
+    //     this.package = data;
+    //     console.log(this.package);
+    //   },
+      
+    //   () => {
+    //     this.package = null;
+    //     console.log("No user info.");
+    //   }
+    // )
 
-  //        console.log(this.user)
-         
-  //      },
-  //      () => {
-  //        this.user = null;
-  //        console.log("NO USER");
-  //      }
-  //    )
-  //  }
+    this.user = localStorage.getItem('user')
 
-  //  userInfo():void {
-  //   this.ps.getUser(this.userName, this.passWord).subscribe(
-  //     (data2:User) => {
-  
-  //       this.user = data2;
-  //       console.log("here's the user");
-  //       console.log(this.user);
-  //     }
-  //   )
-  
-  // }
+  }
+
 
 }

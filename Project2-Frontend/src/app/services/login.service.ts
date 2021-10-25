@@ -5,6 +5,7 @@ import {catchError, tap} from 'rxjs/internal/operators'
 import { User } from '../models/user';
 import { Jwt } from '../models/jwt';
 import { UserComponent } from '../components/user/user.component';
+import { Package } from '../models/package';
 
 /*const httpOptions = {
   Headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -36,14 +37,14 @@ export class LoginService {
   }*/
   logurl = "http://localhost:8090/login"
 
-   login(username:String, password:String):Observable<any> {
+   login(username:String, password:String):Observable<Package> {
     const encodedCredentials = btoa(`${username}:${password}`);
     const httpOptions = {
         headers: new HttpHeaders({
             'Authorization': `Basic ${encodedCredentials}`
         })
     }; 
-    return this.http.post(this.logurl, {username, password}, {withCredentials:true}) as Observable<any>
+    return this.http.post(this.logurl, {username, password}, {withCredentials:true}) as Observable<Package>
 
    };
 
