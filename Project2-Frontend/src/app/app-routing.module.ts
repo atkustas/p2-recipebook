@@ -22,7 +22,7 @@ const routes: Routes = [
   },
 
   {
-    path: "registration",
+    path: "new",
     component: RegistrationComponent
   },
 
