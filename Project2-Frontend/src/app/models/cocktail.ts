@@ -1,7 +1,7 @@
 export class Cocktail {
 
     constructor(
-        public drinks:object
+        public drinks:object[]
         // public strDrink:String,
         // public strDrinkThumb:String,
         // public strIngredient1:String,

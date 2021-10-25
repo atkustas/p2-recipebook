@@ -11,7 +11,7 @@
         <p>
             <input type="search" id="form1" class="w-25" [(ngModel)]="input" />
             <br>
-          <button class="btn btn-secondary my-2" (click)="getByName">Search by Drink Name</button>
+          <button class="btn btn-secondary my-2" (click)= "getByName(input)">Search by Drink Name</button>
           <button class="btn btn-secondary my-2">Search by Ingredient</button>
         </p>
         <h4>Not sure what you are looking for? Check out some random drinks below for inspiration </h4>
@@ -64,7 +64,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
             <div class="card mb-4 box-shadow" *ngIf="cocktail">
            <img class="card-img-top"  src={{cocktail.drinks[0].strDrinkThumb}}  style="height: 225px; width: 100%; display: block;">
               <div class="card-body">
@@ -146,7 +146,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
 
         </div>
