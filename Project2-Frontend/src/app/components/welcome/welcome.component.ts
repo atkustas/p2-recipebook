@@ -45,15 +45,14 @@ public test:any;
 loginFunc(): void {
   console.log("in loginfuc1");
   this.ps.login(this.userName,this.passWord).subscribe(
-    /*(data:any) => {
+    (data:any) => {
       console.log("in loginfuc2");
       console.log(data);
 
       this.test = data;
       console.log(this.test);
-      // console.log(LoginService);
-    },*/
-
+      console.log(LoginService);
+    },
     () => {
       console.log("in loginfuc2 fail");
       this.user = null;

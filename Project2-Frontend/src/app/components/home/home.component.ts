@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
 
   public cocktail:any;
 
+  public cocktails: any[] = [0];
+
   public input:any;
 
   constructor(private ps:CocktailService) { }
@@ -40,7 +42,10 @@ export class HomeComponent implements OnInit {
          console.log(this.cocktail.drinks)
          console.log(this.cocktail.drinks[0])
          console.log(this.cocktail.drinks[0].strDrinkThumb)
-       },
+
+
+
+        },
        () => {
          this.cocktail = null;
          console.log("Whoops no drink for you");
