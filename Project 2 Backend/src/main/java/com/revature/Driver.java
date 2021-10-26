@@ -34,7 +34,7 @@ public class Driver {
 		ReviewDao rd = new ReviewDao();
 		ReviewController rvc = new ReviewController();
 		RegistrationController rc = new RegistrationController();
-		//FavoriteController fc = new FavoriteController();
+		FavoriteController fc = new FavoriteController();
 		
 		UserDao uDao = new UserDao();
 		FavoriteDao fd = new FavoriteDao();
@@ -62,9 +62,9 @@ public class Driver {
 		app.post("/register", rc.register);
 		
 		app.post("/addcocktail", cc.addcocktail);
-//		app.post("/addfavorite", fc.addfavorite);
-//		app.post("/addfav", fc.addfav);
-//		app.post("/viewfavorites", fc.userfavs);
+		app.post("/addfavorite", fc.addfavorite);
+		app.post("/addfav", fc.addfav);
+		app.post("/viewfavorites", fc.userfavs);
 		app.post("/addreview", rvc.addreview);
 		app.get("/allreviews", rvc.getallreviews);
 		app.post("/reviewsbyuser", rvc.reviewsbyuser);
