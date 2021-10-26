@@ -10,6 +10,7 @@ import com.revature.models.Cocktail;
 import com.revature.models.Review;
 import com.revature.models.ReviewDTO;
 import com.revature.models.User;
+import com.revature.services.CocktailService;
 import com.revature.services.ReviewService;
 import com.revature.services.UserService;
 
@@ -19,6 +20,7 @@ public class ReviewController {
 	
 	ReviewService rs = new ReviewService();
 	UserService us = new UserService();
+	CocktailService cs = new CocktailService();
 	
 	public Handler addreview = (ctx) -> {
 		
@@ -29,6 +31,10 @@ public class ReviewController {
 			Gson gson = new Gson();
 			
 			ReviewDTO rDTO = gson.fromJson(body, ReviewDTO.class);
+			
+			Cocktail c = new Cocktail(rDTO.getDrink());
+			cs.addCocktail(c);
+			
 			Cocktail rDrink = rs.findDrinkByDrinkName(rDTO.getDrink());
 			User rUser = rs.getUserById(rDTO.getUser_id());
 

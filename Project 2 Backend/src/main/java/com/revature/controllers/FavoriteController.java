@@ -5,8 +5,10 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.revature.models.Cocktail;
 import com.revature.models.Favorite;
+import com.revature.models.FavoriteDTO;
 import com.revature.models.ReviewDTO;
 import com.revature.models.User;
+import com.revature.services.CocktailService;
 import com.revature.services.FavoriteService;
 import com.revature.services.ReviewService;
 
@@ -16,28 +18,33 @@ public class FavoriteController {
 	
 	ReviewService rs = new ReviewService();
 	FavoriteService fs = new FavoriteService();
-	
-	public Handler addfavorite = (ctx) -> {
+	CocktailService cs = new CocktailService();
 		
-		if(ctx.req.getSession(false) != null) {
+		public Handler addfavorite = (ctx) -> {
 			
-				String body = ctx.body();
-				Gson gson = new Gson();
+			if(ctx.req.getSession(false) != null) {
 				
-				ReviewDTO rDTO = gson.fromJson(body, ReviewDTO.class);
-				Cocktail rDrink = rs.findDrinkByDrinkName(rDTO.getDrink());
-				User rUser = rs.getUserById(rDTO.getUser_id());
-				
-				Favorite r = new Favorite(rUser, rDrink);
-				
-				fs.addFavorite(r);
-				
-				ctx.status(200);
-				
-			} else {
-				ctx.status(403);
-			}
-		};
+					String body = ctx.body();
+					Gson gson = new Gson();
+					
+					FavoriteDTO fDTO = gson.fromJson(body, FavoriteDTO.class);
+					
+					Cocktail c = new Cocktail(fDTO.getDrink());
+					cs.addCocktail(c);
+					
+					Cocktail rDrink = rs.findDrinkByDrinkName(fDTO.getDrink());
+					User rUser = rs.getUserById(fDTO.getUser_id());
+					
+					Favorite r = new Favorite(rUser, rDrink);
+					
+					fs.addFavorite(r);
+					
+					ctx.status(200);
+					
+				} else {
+					ctx.status(403);
+				}
+			};
 		
 		
 		
@@ -61,5 +68,28 @@ public class FavoriteController {
 		}
 			
 	};
+	
+	//before refactor
+	public Handler addfav = (ctx) -> {
+		
+		if(ctx.req.getSession(false) != null) {
+			
+				String body = ctx.body();
+				Gson gson = new Gson();
+				
+				ReviewDTO rDTO = gson.fromJson(body, ReviewDTO.class);
+				Cocktail rDrink = rs.findDrinkByDrinkName(rDTO.getDrink());
+				User rUser = rs.getUserById(rDTO.getUser_id());
+				
+				Favorite r = new Favorite(rUser, rDrink);
+				
+				fs.addFavorite(r);
+				
+				ctx.status(200);
+				
+			} else {
+				ctx.status(403);
+			}
+		};
 
 }

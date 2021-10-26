@@ -24,7 +24,7 @@ public class ReviewDTO {
 	}
 
 
-	public ReviewDTO(String review, String drink, int user_id,int drink_id) {
+	public ReviewDTO(String review, String drink, int user_id, int drink_id) {
 		super();
 		this.review = review;
 		this.drink = drink;
