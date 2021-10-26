@@ -122,15 +122,15 @@ async function regiFunc() {
   console.log(response.status)
 }*/
 
-// regFunc(): void{
-//   this.ps.register(this.input).subscribe(
-//     (data:any) => {
-//       this.register = data;
-//       console.log(this.register)
-//     },
-//     () => {
-//       this.register = null;
-//     }
-//   )
-// }
+ regFunc(): void{
+   this.ls.register(this.userName, this.email, this.passWord).subscribe(
+     (data:any) => {
+       this.package = data;
+       console.log(this.package)
+     },
+     () => {
+       this.package = null;
+     }
+   )
+ }
 }
