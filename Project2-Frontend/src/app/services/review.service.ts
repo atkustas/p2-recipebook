@@ -14,8 +14,8 @@ export class ReviewService {
     //adding a review for cocktail
     addRevUrl = "http://localhost:8090/addreview"
 
-    addReview(user_id:any, drinkName:String): Observable<Review> {
-        return this.http.post(this.addRevUrl, {user_id, drinkName}, {withCredentials:true}) as Observable<Review>
+    addReview(user_id:any, drink:String, review:String){
+        return this.http.post(this.addRevUrl, {user_id, drink, review}, {withCredentials:true})
         
     }
 

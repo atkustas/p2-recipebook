@@ -20,7 +20,8 @@ export class UserComponent implements OnInit {
   public user:any;
   public package:any;
   public user_id:any;
-  public drinkName: String = '';
+  public drink:String = '';
+  public review:any;
 
   ngOnInit(): void {
     this.getInfo();
@@ -46,8 +47,11 @@ export class UserComponent implements OnInit {
 
 
   getFavorites(): void{
-    this.fs.addFavorite(this.user_id, this.drinkName).subscribe(
-      (data:any) => {
+
+    this.user_id = localStorage.getItem('user_id')
+
+    this.fs.addFavorite(this.user_id, this.drink).subscribe(
+            (data:any) => {
         this.package = data;
         console.log(this.package);
       },
@@ -57,7 +61,7 @@ export class UserComponent implements OnInit {
         console.log("can't add fav")
       }
     )
-    this.user_id = localStorage.getItem('user_id')
+    
   }
 
   getReviews(): void{
@@ -74,8 +78,8 @@ export class UserComponent implements OnInit {
     
   }
 
-  addReviews(): void{
-    this.rs.addReview(this.user_id, this.drinkName).subscribe(
+  newReview(): void{
+    this.rs.addReview(this.user_id, this.drink, this.review).subscribe(
       (data:any) => {
         this.package = data;
         console.log(this.package);
