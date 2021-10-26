@@ -14,8 +14,8 @@ export class FavoriteService {
     //adding a favorite cocktail
     addFavUrl = "http://localhost:8090/addfavorite"
 
-    addFavorite(user_id:any, drinkName:String){
-        return this.http.post(this.addFavUrl, {user_id, drinkName}, {withCredentials:true})
+    addFavorite(user_id:any, drink:String){
+        return this.http.post(this.addFavUrl, {user_id, drink}, {withCredentials:true})
         
     }
 

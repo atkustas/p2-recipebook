@@ -16,7 +16,7 @@
         </p>
         <h4>Not sure what you are looking for? Click the button below for a some inspiration </h4>
       </div>
-      <button id="testingImgBut" class="btn btn-secondary"(click)="getRanDrink()">Random Drink</button>
+      <button id="testingImgBut" class="btn btn-secondary" (click)="getRanDrink()">Random Drink</button>
     </section>
 
     <div class="album py-5 bg-dark">
@@ -57,7 +57,7 @@
 
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Add to Favorites</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addFavoriteDrink(drink)">Add to Favorites</button>
 
                   </div>
 
@@ -70,7 +70,7 @@
            <img class="card-img-top"  src={{cocktail.drinks[1].strDrinkThumb}}  style="height: 225px; width: 100%; display: block;">
               <div class="card-body">
                 <div>
-                    <h2>{{cocktail.drinks[1].strDrink}}</h2>
+                    <h2 [(ngModel)] = "drink">{{cocktail.drinks[1].strDrink}}</h2>
                   </div>
                 <p class="card-text">
                     <div class="stats mt-2">
@@ -98,7 +98,7 @@
                       </div>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Add to Favorites</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addFavoriteDrink(drink)">Add to Favorites</button>
 
                   </div>
 
@@ -112,7 +112,7 @@
                     <img class="card-img-top"  src={{cocktail.drinks[0].strDrinkThumb}}  style="height: 225px; width: 100%; display: block;">
                        <div class="card-body">
                          <div>
-                             <h2>{{cocktail.drinks[2].strDrink}}</h2>
+                             <h2 [(ngModel)] = "drink">{{cocktail.drinks[2].strDrink}}</h2>
                            </div>
                 <p class="card-text">
                     <div class="stats mt-2">
@@ -140,7 +140,7 @@
                       </div>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Add to Favorites</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addFavoriteDrink(drink)">Add to Favorites</button>
 
                   </div>
 
