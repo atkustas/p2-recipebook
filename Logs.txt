@@ -62,3 +62,8 @@
 2021-10-24 20:01:03 INFO  LoginService:28 - Billy Bob logged in with username: username and password: password
 2021-10-24 20:01:14 INFO  LoginService:28 - Billy Bob logged in with username: username and password: password
 2021-10-24 20:01:31 INFO  LoginService:28 - Billy Bob logged in with username: username and password: password
+2021-10-26 12:42:49 INFO  CocktailDao:48 - New cocktail added to database: Whiskey Sour
+2021-10-26 12:42:49 INFO  CocktailDao:48 - New cocktail added to database: Moscow Mule
+2021-10-26 12:51:24 INFO  CocktailDao:48 - New cocktail added to database: Whiskey Sour
+2021-10-26 12:51:24 INFO  CocktailDao:48 - New cocktail added to database: Moscow Mule
+2021-10-26 13:08:19 INFO  RegistrationController:61 - New user null nullregistered with site.

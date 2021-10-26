@@ -1,3 +1,4 @@
+import { User } from 'src/app/models/user';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -30,8 +31,18 @@ type:String ="";//document.getElementById("exampleFormControlSelect1").value;
 desc:String = "";//document.getElementById("EmpFormControlTextarea1").value;
 
 
+public inputFN: String = "John";
+public inputLN: String = "Smith";
+public inputUN: String = "JSmith";
+public inputPW: String = "xxxxx";
+public inputAge: any = "xx/xx/xxxx";
+public inputEM: String = "jSm@Gmail.com";
+
+
+
+
 //add ticket function
-async newTicket() {
+async getUserInfoFReg() {
 
   console.log("inside the newTicket async");
   //console.log("This is the userOb: " + userOb);
@@ -43,51 +54,25 @@ async newTicket() {
   //document.getElement....value for each ticket.parameter
   //need to have all the parameters set for the server to accept the ticket
 
-
-      if(this.type == "Business"){
-          this.type_id = 1;
-      }else if(this.type = "Travel"){
-          this.type_id = 2;
-      }else if(this.type = "Medical"){
-          this.type_id= 3;
-      }else{
-          this.type_id = 4;
-      }
-
-      // let type_id_ob = {
-      //     re_type: type,
-      //     re_type_id: type_id
-
-      // };
-
-      let status_id_ob = {
-          re_status: "Pending",
-          re_status_id: 3
-
-      };
-
-
-    let ticket = {
-    re_amount: this.amount,
-   re_submitted: this.timeSubmitted,
-  //     re_resolved: null,
-  //     re_desc: desc,
-  //     re_receipt: null,
-  //     re_author: userOb,
-  //     re_resolver: null,
-  //     re_status_id: status_id_ob,
-  //     re_type_id: type_id_ob
+    let user: User = {
+      email: this.inputEM,
+      dob: this.inputAge,
+      firstname: this.inputFN,
+      lastname: this.inputLN,
+      password: this.inputPW,
+      username: this.inputUN,
+      user_id: "158"
     };
 
-  console.log(ticket);
+  console.log(user);
   console.log("sending request");
 
-  let response = await fetch(this.url + "newticket", {
+  let response = await fetch(this.url + "register", {
 
 
       method: "POST",
       mode: 'cors',
-      body: JSON.stringify(ticket),
+      body: JSON.stringify(user),
       credentials: "include"
 
   });
@@ -103,8 +88,9 @@ async newTicket() {
       // document.getElementById("EmpFormControlTextarea1").value = null;
 
       // //call function to disappear ticket form and show success message
-      // changeHideEmpForm()
+     //changeHideRegForm()
   }
+    //changeFailedRegFrom()
 }
 
 }
@@ -114,4 +100,12 @@ async newTicket() {
 
 
 
+
+function changeHideRegForm() {
+
+}
+
+function changeFailedRegFrom() {
+
+}
 
