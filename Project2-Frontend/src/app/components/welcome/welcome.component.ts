@@ -56,8 +56,14 @@ loginFunc(): void {
 
       console.log("in loginFunc, should have Package");
       console.log(this.package);
-      localStorage.setItem('token', this.package.jwt);
-      localStorage.setItem('user', this.package.user);
+      //localStorage.setItem('token', this.package.jwt);
+     //localStorage.setItem('user', JSON.stringify(this.package.user));
+
+      let newPackage = JSON.stringify(this.package);
+      localStorage.setItem('pkg', newPackage);
+      console.log(localStorage.getItem('pkg'));
+      //console.log(JSON.stringify(localStorage.getItem('user')));
+      //console.log(localStorage.getItem('token'));
     },
 
     () => {

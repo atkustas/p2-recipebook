@@ -48,8 +48,6 @@ export class UserComponent implements OnInit {
 
   getFavorites(): void{
 
-    this.user = localStorage.getItem('user')
-
     this.fs.viewFavorites(this.user).subscribe(
         (data:any) => {
         this.package = data;

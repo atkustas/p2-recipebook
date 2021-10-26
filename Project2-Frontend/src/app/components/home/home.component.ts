@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Cocktail } from 'src/app/models/cocktail';
+import { User } from 'src/app/models/user';
 import { CocktailService } from 'src/app/services/cocktail.service';
+import { FavoriteService } from 'src/app/services/favorite.service';
 
 
 @Component({
@@ -15,26 +18,12 @@ export class HomeComponent implements OnInit {
 
   public input:any = "";
 
-  constructor(private ps:CocktailService) { }
+  public drink:any = "";
+
+  constructor(private cs:CocktailService, private fs:FavoriteService) { }
 
   ngOnInit(): void {
-   // this.ps.getrandomCocktail().subscribe(
-    //   (data
-    //     this.cocktail = data;
-    //     console.log(this.cocktail)
-    //   },
-    //   () => {
-    //     this.cocktail = null;
-    //     console.log("Whoops no drink for you");
-    //   }
-    // )
-    //this.getRanDrink();
-
-    //this.fillRanDrink();
-
-   // console.log(this.getByName("A1"))
-    //console.log(this.cocktail.drinks[0])
-    //console.log(this.cocktail.drinks[2])
+   
   }
 
 
@@ -47,7 +36,7 @@ export class HomeComponent implements OnInit {
   }
 
   getRanDrink(): void {
-    this.ps.getrandomCocktail().subscribe(
+    this.cs.getrandomCocktail().subscribe(
        (data:any) =>{
 
 
@@ -70,7 +59,7 @@ export class HomeComponent implements OnInit {
 
   getByName(input:String): void{
     console.log(input);
-    this.ps.getCocktailFromApi(input).subscribe(
+    this.cs.getCocktailFromApi(input).subscribe(
       (data:any) => {
         this.cocktail = data;
         console.log(this.cocktail);
@@ -83,7 +72,7 @@ export class HomeComponent implements OnInit {
   }
 
   getByIngredient(input:String): void{
-    this.ps.getCocktailByIngredient(input).subscribe(
+    this.cs.getCocktailByIngredient(input).subscribe(
       (data:any) => {
         this.cocktail = data;
       },
@@ -93,4 +82,17 @@ export class HomeComponent implements OnInit {
       }
     )
   }
+
+  addFavoriteDrink(drink:any): void{
+
+    let user_id;
+
+    user_id = localStorage.getItem('user.user_id');
+    console.log(user_id);
+
+    this.fs.addFavorite(user_id, drink).subscribe(
+    )
+  }
+
+
 }
