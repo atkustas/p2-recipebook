@@ -48,17 +48,17 @@ export class UserComponent implements OnInit {
 
   getFavorites(): void{
 
-    this.user_id = localStorage.getItem('user_id')
+    this.user = localStorage.getItem('user')
 
-    this.fs.addFavorite(this.user_id, this.drink).subscribe(
-            (data:any) => {
+    this.fs.viewFavorites(this.user).subscribe(
+        (data:any) => {
         this.package = data;
         console.log(this.package);
       },
 
       () => {
         this.package = null;
-        console.log("can't add fav")
+        console.log("Can't find favorites.")
       }
     )
     

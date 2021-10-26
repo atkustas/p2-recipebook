@@ -61,7 +61,7 @@ loginFunc(): void {
     },
 
     () => {
-      console.log("in loginFunc1 fail");
+      console.log("LOGIN FAILED");
       this.package = null;
     }
   )
