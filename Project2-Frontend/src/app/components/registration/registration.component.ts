@@ -26,49 +26,35 @@ userOb:any;
 type_id = 0;
 
 amount:any = 0; //document.getElementById("EmpFormControlInputAmt").value;
-timeSubmitted:any = "10/11/2021"; //edit current date function
 type:String ="";//document.getElementById("exampleFormControlSelect1").value;
 desc:String = "";//document.getElementById("EmpFormControlTextarea1").value;
 
 
-public inputFN: String = "John";
-public inputLN: String = "Smith";
-public inputUN: String = "JSmith";
-public inputPW: String = "xxxxx";
-public inputAge: any = "xx/xx/xxxx";
-public inputEM: String = "jSm@Gmail.com";
+public inputFN:any;
+public inputLN:any;
+public inputUN:any;
+public inputPW:any;
+public inputDob:any;
+public inputEM:any;
 
-
-
-
-//add ticket function
+//add user function
 async getUserInfoFReg() {
 
-  console.log("inside the newTicket async");
-  //console.log("This is the userOb: " + userOb);
+  console.log("inside the registration async");
 
-  //populate form with userOb data (first/last name), user_id (regular employee is signed it at this point)
-  //remember to use timestamp function to set re_submitted --- "timestamp = new Date();"
-
-  //this will be where the JS reads the ticket parameters from the form inputs
-  //document.getElement....value for each ticket.parameter
-  //need to have all the parameters set for the server to accept the ticket
-
-    let user: User = {
+    let user:any = {
       email: this.inputEM,
-      dob: this.inputAge,
-      firstname: this.inputFN,
-      lastname: this.inputLN,
+      dob: this.inputDob,
+      firstName: this.inputFN,
+      lastName: this.inputLN,
       password: this.inputPW,
       username: this.inputUN,
-      user_id: "158"
     };
 
   console.log(user);
   console.log("sending request");
 
   let response = await fetch(this.url + "register", {
-
 
       method: "POST",
       mode: 'cors',
@@ -82,7 +68,7 @@ async getUserInfoFReg() {
 
   if(response.status === 201){
 
-      console.log("New ticket submitted.");
+      console.log("New user created.");
       this.amount=null;
       // document.getElementById("EmpFormControlInputAmt").value = null;
       // document.getElementById("EmpFormControlTextarea1").value = null;

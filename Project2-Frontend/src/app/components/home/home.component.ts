@@ -13,12 +13,10 @@ import { FavoriteService } from 'src/app/services/favorite.service';
 export class HomeComponent implements OnInit {
 
   public cocktail:any;
-
   public cocktails: any[] = [0];
-
-  public input:any = "";
-
-  public drink:any = "";
+  public input:any;
+  public user_id:any;
+  public drink:any;
 
   constructor(private cs:CocktailService, private fs:FavoriteService) { }
 
@@ -85,13 +83,10 @@ export class HomeComponent implements OnInit {
 
   addFavoriteDrink(drink:any): void{
 
-    let user_id;
+    this.user_id = 
+    drink = this.drink;
 
-    user_id = localStorage.getItem('user.user_id');
-    console.log(user_id);
-
-    this.fs.addFavorite(user_id, drink).subscribe(
-    )
+    this.fs.addFavorite(this.user_id, drink)
   }
 
 

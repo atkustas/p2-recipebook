@@ -76,9 +76,15 @@ public class LoginController {
 			//get user object based on credentials sent in
 			List<User> user = ls.getUserByCredentials(LDTO.getUsername(), LDTO.getPassword());
 			
+			User u = new User();
+			
+			for(User x : user) {
+				u = x;
+			}
+			
 			log.info("Right after getting the user");
 			//convert Java user to JSON
-			String JSONuser = gson.toJson(user);
+			String JSONuser = gson.toJson(u);
 			
 			log.info("User sent back to frontend");
 			

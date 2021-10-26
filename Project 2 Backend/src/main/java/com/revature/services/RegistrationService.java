@@ -1,6 +1,7 @@
 package com.revature.services;
 
 import com.revature.daos.UserDao;
+import com.revature.models.User;
 
 public class RegistrationService {
 	
@@ -20,6 +21,10 @@ public class RegistrationService {
 		} else {
 			return false;
 		}
+	}
+	
+	public void registerUser(User u) {
+		uDao.insertUser(u);
 	}
 	
 

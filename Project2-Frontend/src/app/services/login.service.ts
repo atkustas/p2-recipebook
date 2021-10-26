@@ -50,16 +50,16 @@ export class LoginService {
 
   usurl = "http://localhost:8090/returnuser"
 
-  // getUser(username:String, password:String):Observable<User>{
-  //   const jwt = localStorage.getItem('token');
-  //   console.log("Heres the JWT: " +jwt)
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'Authorization': `Basic ${jwt}`
-  //     })
-  //   }
-  //   return this.http.post(this.usurl, {username, password}, {withCredentials:true}) as Observable<User>
-  // }
+  getUser(username:String, password:String):Observable<User>{
+    const jwt = localStorage.getItem('token');
+    console.log("Heres the JWT: " +jwt)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': `Basic ${jwt}`
+      })
+    }
+    return this.http.post(this.usurl, {username, password}, {withCredentials:true}) as Observable<User>
+  }
 
    
    
