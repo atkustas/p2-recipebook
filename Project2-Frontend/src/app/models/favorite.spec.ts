@@ -1,13 +1,13 @@
-import { Cocktail } from './cocktail';
+import { Favorite } from './favorite';
 import { TestBed } from '@angular/core/testing';
 
-describe('Cocktail', () => {
+describe('Favorite', () => {
 
-  let model: Cocktail;
+  let model: Favorite;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    model = TestBed.inject(Cocktail);
+    model = TestBed.inject(Favorite);
   });
 
   it('should create an instance', () => {
