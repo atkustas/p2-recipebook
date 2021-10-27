@@ -1,0 +1,23 @@
+2021-10-27 16:14:16 INFO  CocktailDao:48 - New cocktail added to database: Whiskey Sour
+2021-10-27 16:14:16 INFO  CocktailDao:48 - New cocktail added to database: Moscow Mule
+2021-10-27 16:15:22 INFO  LoginService:28 - Billy Bob logged in with username: username and password: password
+2021-10-27 16:56:37 INFO  RegistrationController:47 - Underage user attempted registration and was rejected.
+2021-10-27 16:56:52 INFO  RegistrationController:61 - New user Freddie Smith registered with site.
+2021-10-27 16:57:17 INFO  LoginService:28 - Freddie Smith logged in with username: username and password: LostSpace
+2021-10-27 16:58:39 INFO  CocktailDao:48 - New cocktail added to database: Martini
+2021-10-27 16:58:39 INFO  FavoriteService:20 - User User [user_id=1, email=test@gmail.com, username=username, password=LostSpace, firstName=Freddie, lastName=Smith, dob=10/14/1999] added drink Cocktail [drink_id=2, drink=Martini] to their Favorites.
+2021-10-27 16:59:06 INFO  CocktailDao:48 - New cocktail added to database: Mango Mojito
+2021-10-27 16:59:07 INFO  FavoriteService:20 - User User [user_id=1, email=test@gmail.com, username=username, password=LostSpace, firstName=Freddie, lastName=Smith, dob=10/14/1999] added drink Cocktail [drink_id=3, drink=Mango Mojito] to their Favorites.
+2021-10-27 16:59:52 INFO  LoginService:34 - Login attempt with invalid credentials username username and password: LostSpace
+2021-10-27 17:00:38 INFO  RegistrationController:55 - User attempted registration with an email already in use: test@gmail.com. Registration failed.
+2021-10-27 17:00:49 INFO  RegistrationController:61 - New user Andreas Kustas registered with site.
+2021-10-27 17:01:00 INFO  CocktailDao:48 - New cocktail added to database: Pisco Sour
+2021-10-27 17:01:01 INFO  FavoriteService:20 - User null added drink Cocktail [drink_id=4, drink=Pisco Sour] to their Favorites.
+2021-10-27 17:01:10 INFO  CocktailDao:48 - New cocktail added to database: Blue Margarita
+2021-10-27 17:01:10 INFO  FavoriteService:20 - User null added drink Cocktail [drink_id=5, drink=Blue Margarita] to their Favorites.
+2021-10-27 17:01:32 INFO  LoginService:28 - Andreas Kustas logged in with username: akustas and password: asdf
+2021-10-27 17:01:39 INFO  FavoriteService:20 - User User [user_id=2, email=test5@gmail.com, username=akustas, password=asdf, firstName=Andreas, lastName=Kustas, dob=03/20/1989] added drink Cocktail [drink_id=5, drink=Blue Margarita] to their Favorites.
+2021-10-27 17:01:44 INFO  CocktailDao:48 - New cocktail added to database: Brain Fart
+2021-10-27 17:01:44 INFO  FavoriteService:20 - User User [user_id=2, email=test5@gmail.com, username=akustas, password=asdf, firstName=Andreas, lastName=Kustas, dob=03/20/1989] added drink Cocktail [drink_id=6, drink=Brain Fart] to their Favorites.
+2021-10-27 17:08:48 INFO  ReviewService:50 - Cocktail reviews viewed for User 0:Billy Bob
+2021-10-27 17:08:49 INFO  CocktailDao:48 - New cocktail added to database: Test Drink

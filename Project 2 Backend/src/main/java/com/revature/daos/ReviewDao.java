@@ -21,6 +21,7 @@ public class ReviewDao implements ReviewInterface {
 		HibernateUtil.closeSession();
 	}
 
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Review> getReviewsByDrink(String cocktail) {

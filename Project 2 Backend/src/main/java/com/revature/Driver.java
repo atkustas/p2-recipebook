@@ -75,7 +75,7 @@ public class Driver {
 		
 		
 		//add some users
-		User u1 = new User("test@gmail.com", "username", "password", "Billy", "Bob", "10/15/2021");
+		User u1 = new User("test@gmail.com", "username", "password", "Billy", "Bob", "10/15/1983");
 		User u2 = new User("test2@gmail.com", "testtwo", "strongpassword", "Ronald", "McDonald", "06/14/1952");
 		
 		uDao.insertUser(u1);
