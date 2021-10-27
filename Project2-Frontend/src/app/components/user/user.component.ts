@@ -23,7 +23,7 @@ export class UserComponent implements OnInit {
   public review:any;
   public user_id:any;
   public drink:String = '';
-  public favsArray = localStorage.getItem('favs');
+  public favsArray = sessionStorage.getItem('favs');
   public fav1:any;
   public fav2:any;
   public fav3:any;
@@ -39,25 +39,25 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.user_id = localStorage.getItem('id');
+    this.user_id = sessionStorage.getItem('id');
     console.log("This is the user ID: " +this.user_id);
-    this.fav1 = localStorage.getItem('fav1');
-    this.fav2 = localStorage.getItem('fav2');
-    this.fav3 = localStorage.getItem('fav3');
+    this.fav1 = sessionStorage.getItem('fav1');
+    this.fav2 = sessionStorage.getItem('fav2');
+    this.fav3 = sessionStorage.getItem('fav3');
 
-    this.fName = localStorage.getItem('fName');
-    this.lName = localStorage.getItem('lName');
-    this.dob = localStorage.getItem('dob');
-    this.email = localStorage.getItem('email');
-    this.username = localStorage.getItem('un');
-    this.password = localStorage.getItem('pw');
+    this.fName = sessionStorage.getItem('fName');
+    this.lName = sessionStorage.getItem('lName');
+    this.dob = sessionStorage.getItem('dob');
+    this.email = sessionStorage.getItem('email');
+    this.username = sessionStorage.getItem('un');
+    this.password = sessionStorage.getItem('pw');
 
     console.log(this.fName);
     console.log(this.lName);
     console.log(this.dob);
     console.log(this.email);
     console.log(this.fName);
-    
+
 
   }
 
