@@ -65,11 +65,11 @@ export class FavoriteService {
         console.log("Favorites viewed");
      }
      console.log(favsArray);
-     localStorage.setItem('favs', favsArray);
+     sessionStorage.setItem('favs', favsArray);
      
-     localStorage.setItem('fav1', favsArray[0].drink_id.drink);
-     localStorage.setItem('fav2', favsArray[1].drink_id.drink);
-     localStorage.setItem('fav3', favsArray[2].drink_id.drink);
+     sessionStorage.setItem('fav1', favsArray[0].drink_id.drink);
+     sessionStorage.setItem('fav2', favsArray[1].drink_id.drink);
+     sessionStorage.setItem('fav3', favsArray[2].drink_id.drink);
 
      
      console.log(favsArray);
