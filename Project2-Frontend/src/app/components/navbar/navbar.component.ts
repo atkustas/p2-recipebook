@@ -1,3 +1,4 @@
+import { User } from 'src/app/models/user';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,6 +11,17 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  clearInfo(){
+
+    console.log(localStorage);
+    console.log(sessionStorage);
+    localStorage.clear();
+    sessionStorage.clear();
+    console.log(localStorage);
+    console.log(sessionStorage);
+
   }
 
 }

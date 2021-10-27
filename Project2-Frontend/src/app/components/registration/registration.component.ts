@@ -185,8 +185,8 @@ submitName2(){
 
   this.greeterDiv = false;
 
-  this.failBox = !this.failBox;
-  this.failBoxTag = !this.failBox;
+  this.failBox = false;
+  this.failBoxTag = false;
 
 
   this.greeterDiv2 = true;
