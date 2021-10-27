@@ -93,6 +93,35 @@ async getUserInfoFReg() {
     //changeFailedRegFrom()
 }
 
+
+
+
+ changeHideRegForm() {
+
+  this.clearForms()
+
+  //user was created
+
+  //link to somewhere else
+
+}
+
+
+ changeFailedRegFrom() {
+
+//user failed to be created
+
+}
+
+ clearForms() {
+ this.inputEM = "0";
+this.inputAge = "0";
+this.inputFN = "0";
+this.inputLN = "0";
+this.inputPW = "0";
+this.inputUN = "0";
+}
+
 }
 
 
@@ -100,12 +129,4 @@ async getUserInfoFReg() {
 
 
 
-
-function changeHideRegForm() {
-
-}
-
-function changeFailedRegFrom() {
-
-}
 
