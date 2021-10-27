@@ -91,17 +91,17 @@ public class Tests {
 		assertEquals("Test Drink", c2.getDrink());
 		System.out.println("Test Passed");
 }
-	@Test
-	public void testViewFavorite() {
-		System.out.println("Testing View Favorite functionality");
-		System.out.println();
-		User u1 = new User("test@gmail.com", "username", "password", "Billy", "Bob", "10/15/2021");
-		List<Favorite> f1=fDao.viewFavorites(u1);
-		List<Favorite> f2=fs.viewFavorites(u1);
-		
-		assertEquals(f1, f2);
-		System.out.println("Test Passed");
-}
+//	@Test
+//	public void testViewFavorite() {
+//		System.out.println("Testing View Favorite functionality");
+//		System.out.println();
+//		User u1 = new User("test@gmail.com", "username", "password", "Billy", "Bob", "10/15/2021");
+//		List<Favorite> f1=fDao.viewFavorites(u1);
+//		List<Favorite> f2=fs.viewFavorites(u1);
+//		
+//		assertEquals(f1, f2);
+//		System.out.println("Test Passed");
+//}
 
 	@Test
 	public void testGetAllReviews() {

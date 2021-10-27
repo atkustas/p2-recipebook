@@ -11,6 +11,6 @@ public interface FavoriteInterface {
 	
 	public void deleteFavoriteById(int id);
 	
-	public List<Favorite> viewFavorites(User u);
+	public List<Favorite> viewFavorites(int u);
 
 }

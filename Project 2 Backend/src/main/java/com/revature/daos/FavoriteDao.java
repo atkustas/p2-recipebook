@@ -15,7 +15,13 @@ public class FavoriteDao implements FavoriteInterface {
 	public void addFavorite(Favorite f) {
 
 		try(Session ses = HibernateUtil.getSession()){
+			
+//			Favorite existingFav = null;
+//			
+//			List<Favorite> favoriteList = viewFavorites(f.getUser_list().getUser_id());
+		
 			ses.save(f);
+			
 		} catch(Exception e) {
 			System.out.println("Favorite addition failed.");
 			e.printStackTrace();
@@ -33,11 +39,11 @@ public class FavoriteDao implements FavoriteInterface {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Favorite> viewFavorites(User u) {
+	public List<Favorite> viewFavorites(int u) {
 		
 		Session ses = HibernateUtil.getSession();
 		
-		List<Favorite> userFavs = ses.createQuery("FROM Favorite WHERE user_list = " + u.getUser_id()).list();
+		List<Favorite> userFavs = ses.createQuery("FROM Favorite WHERE user_list = " + u).list();
 		
 		for(Favorite f : userFavs) {
 			System.out.println(f);

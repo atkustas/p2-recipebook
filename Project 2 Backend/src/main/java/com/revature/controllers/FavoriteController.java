@@ -52,9 +52,9 @@ public class FavoriteController {
 			
 		if(ctx.req.getSession(false) != null) {
 				
-			User user = ctx.bodyAsClass(User.class);
+			FavoriteDTO f = ctx.bodyAsClass(FavoriteDTO.class);
 				
-			List<Favorite> userFavs = fs.viewFavorites(user);
+			List<Favorite> userFavs = fs.viewFavorites(f.getUser_id());
 				
 			Gson gson = new Gson();
 				

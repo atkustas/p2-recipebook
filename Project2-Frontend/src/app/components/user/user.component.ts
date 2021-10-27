@@ -18,58 +18,35 @@ export class UserComponent implements OnInit {
   public userName:String = '';
   public passWord:String = '';
   public user:any;
-  public package:any;
+  public favorite:any;
+  public reviews:any;
+  public review:any;
   public user_id:any;
   public drink:String = '';
-  public review:any;
+  
 
   ngOnInit(): void {
-    this.getInfo();
+
+    this.user_id = localStorage.getItem('id');
+    console.log("This is the user ID: " +this.user_id)
 
   }
-
-  getInfo(): void{
-    // this.ls.login(this.userName, this.passWord).subscribe(
-    //   (data:any) => {
-    //     this.package = data;
-    //     console.log(this.package);
-    //   },
-      
-    //   () => {
-    //     this.package = null;
-    //     console.log("No user info.");
-    //   }
-    // )
-
-    this.user = localStorage.getItem('user')
-
-  }
-
 
   getFavorites(): void{
+    console.log("Inside getFavorites");
 
-    this.fs.viewFavorites(this.user).subscribe(
-        (data:any) => {
-        this.package = data;
-        console.log(this.package);
-      },
-
-      () => {
-        this.package = null;
-        console.log("Can't find favorites.")
-      }
-    )
+    this.fs.viewFavorites(this.user_id);
     
   }
 
   getReviews(): void{
     this.rs.viewReviews(this.user).subscribe(
       (data:any) => {
-        this.package = data; 
-        console.log(this.package);
+        this.reviews = data; 
+        console.log(this.reviews);
       },
       () => {
-        this.package = null;
+        this.reviews = null;
         console.log("Cannot view reviews")
       }
     )
@@ -79,11 +56,11 @@ export class UserComponent implements OnInit {
   newReview(): void{
     this.rs.addReview(this.user_id, this.drink, this.review).subscribe(
       (data:any) => {
-        this.package = data;
-        console.log(this.package);
+        this.review = data;
+        console.log(this.review);
       },
       () => {
-        this.package = null;
+        this.review = null;
         console.log("Cannot add review")
       }
     )
