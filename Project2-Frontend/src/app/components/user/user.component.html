@@ -61,43 +61,67 @@
         </div>
        <div class="row">
            <div class="col-md-6">
-            <div class="card mb-4 bg-white" >
-                <div class="card-body text-center mt-2"><img src="../../../assets/cocktail-placeholder.jpeg" style="height: 225px; width: 100%; display: block;">
+            <div class="card mb-4 bg-white" *ngIf= "cocktail1">
+                <div class="card-body text-center mt-2"><img src={{cocktail1.drinks[0].strDrinkThumb}} style="height: 225px; width: 100%; display: block;">
                   <div>
-                    <h2>This is my drink name</h2>
+                    <h2>{{cocktail1.drinks[0].strDrink}}</h2>
                   </div>
                 
                 </div>
                 <div class="stats mt-2">
-                  <div class="d-flex justify-content-between"><span>Ingredient 1</span><span>Measurement 1</span></div>
-                  <div class="d-flex justify-content-between"><span>Ingredient 2</span><span>Measurement 2</span></div>
-                  <div class="d-flex justify-content-between"><span>Ingredient 3</span><span>Measurement 3</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient1}}</span><span>{{cocktail1.drinks[0].strMeasure1}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient2}}</span><span>{{cocktail1.drinks[0].strMeasure2}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient3}}</span><span>{{cocktail1.drinks[0].strMeasure3}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient4}}</span><span>{{cocktail1.drinks[0].strMeasure4}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient5}}</span><span>{{cocktail1.drinks[0].strMeasure5}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient6}}</span><span>{{cocktail1.drinks[0].strMeasure6}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient7}}</span><span>{{cocktail1.drinks[0].strMeasure7}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient8}}</span><span>{{cocktail1.drinks[0].strMeasure8}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient9}}</span><span>{{cocktail1.drinks[0].strMeasure9}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient10}}</span><span>{{cocktail1.drinks[0].strMeasure10}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient11}}</span><span>{{cocktail1.drinks[0].strMeasure12}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient12}}</span><span>{{cocktail1.drinks[0].strMeasure13}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient13}}</span><span>{{cocktail1.drinks[0].strMeasure14}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient14}}</span><span>{{cocktail1.drinks[0].strMeasure15}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail1.drinks[0].strIngredient15}}</span><span>{{cocktail1.drinks[0].strMeasure16}}</span></div>
                 </div>
                 <br>
                 <div>
                   <p class="d-flex justify-content-center">
-                    This is where I am going to put the instructions for making the drink
+                    {{cocktail1.drinks[0].strInstructions}}
                   </p>
                 </div>
               </div>
            </div>
            <div class="col-md-6">
-            <div class="card mb-4 bg-white" >
-                <div class="card-body text-center mt-2"><img src="../../../assets/cocktail-placeholder.jpeg" style="height: 225px; width: 100%; display: block;">
+            <div class="card mb-4 bg-white" *ngIf= "cocktail2">
+                <div class="card-body text-center mt-2"><img src={{cocktail2.drinks[0].strDrinkThumb}} style="height: 225px; width: 100%; display: block;">
                   <div>
-                    <h2>This is my drink name</h2>
+                    <h2>{{cocktail2.drinks[0].strDrink}}</h2>
                   </div>
                 
                 </div>
                 <div class="stats mt-2">
-                  <div class="d-flex justify-content-between"><span>Ingredient 1</span><span>Measurement 1</span></div>
-                  <div class="d-flex justify-content-between"><span>Ingredient 2</span><span>Measurement 2</span></div>
-                  <div class="d-flex justify-content-between"><span>Ingredient 3</span><span>Measurement 3</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient1}}</span><span>{{cocktail2.drinks[0].strMeasure1}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient2}}</span><span>{{cocktail2.drinks[0].strMeasure2}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient3}}</span><span>{{cocktail2.drinks[0].strMeasure3}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient4}}</span><span>{{cocktail2.drinks[0].strMeasure4}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient5}}</span><span>{{cocktail2.drinks[0].strMeasure5}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient6}}</span><span>{{cocktail2.drinks[0].strMeasure6}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient7}}</span><span>{{cocktail2.drinks[0].strMeasure7}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient8}}</span><span>{{cocktail2.drinks[0].strMeasure8}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient9}}</span><span>{{cocktail2.drinks[0].strMeasure9}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient10}}</span><span>{{cocktail2.drinks[0].strMeasure10}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient11}}</span><span>{{cocktail2.drinks[0].strMeasure12}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient12}}</span><span>{{cocktail2.drinks[0].strMeasure13}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient13}}</span><span>{{cocktail2.drinks[0].strMeasure14}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient14}}</span><span>{{cocktail2.drinks[0].strMeasure15}}</span></div>
+                  <div class="d-flex justify-content-between"><span>{{cocktail2.drinks[0].strIngredient15}}</span><span>{{cocktail2.drinks[0].strMeasure16}}</span></div>
                 </div>
                 <br>
                 <div>
                   <p class="d-flex justify-content-center">
-                    This is where I am going to put the instructions for making the drink
+                    {{cocktail2.drinks[0].strInstructions}}
                   </p>
                 </div>
               </div>

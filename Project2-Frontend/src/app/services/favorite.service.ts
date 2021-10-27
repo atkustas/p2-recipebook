@@ -55,15 +55,31 @@ export class FavoriteService {
          body: JSON.stringify(id),
          credentials: "include"
      });
+
+     let data = await response.json();
  
      if(response.status === 200){
  
-        favsArray = response.body;
-         console.log("Favorites viewed");
+        console.log(data);
+        favsArray = data;
+        console.log("Favorites viewed");
      }
+     console.log(favsArray);
+     localStorage.setItem('favs', favsArray);
+     
+     localStorage.setItem('fav1', favsArray[0].drink_id.drink);
+     localStorage.setItem('fav2', favsArray[1].drink_id.drink);
+     localStorage.setItem('fav3', favsArray[2].drink_id.drink);
+
+     
      console.log(favsArray);
      return favsArray;
 
+    }
+
+    getFavs(id:number):Observable<Favorite>{
+
+        return this.http.post(this.viewFavsUrl, id) as Observable<Favorite>
     }
 
 }

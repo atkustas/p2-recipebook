@@ -4,6 +4,6 @@ export class Favorite {
 
     constructor(
         public user:User,
-        public drink:String[]
+        public drink:String
     ){}
 }
