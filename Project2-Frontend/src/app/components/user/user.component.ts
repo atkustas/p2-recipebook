@@ -3,7 +3,6 @@ import { LoginService } from 'src/app/services/login.service';
 import { FavoriteService } from 'src/app/services/favorite.service';
 import { ReviewService } from 'src/app/services/review.service';
 import { CocktailService } from 'src/app/services/cocktail.service';
-import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-user',
@@ -23,7 +22,6 @@ export class UserComponent implements OnInit {
   public review:any;
   public user_id:any;
   public drink:String = '';
-  public favsArray = sessionStorage.getItem('favs');
   public fav1:any;
   public fav2:any;
   public fav3:any;
@@ -35,22 +33,23 @@ export class UserComponent implements OnInit {
   public dob:any;
   public email:any;
   public package:any;
+  public favsArray:any;
   
 
   ngOnInit(): void {
 
-    this.user_id = sessionStorage.getItem('id');
+    this.user_id = localStorage.getItem('id');
     console.log("This is the user ID: " +this.user_id);
-    this.fav1 = sessionStorage.getItem('fav1');
-    this.fav2 = sessionStorage.getItem('fav2');
-    this.fav3 = sessionStorage.getItem('fav3');
-
-    this.fName = sessionStorage.getItem('fName');
-    this.lName = sessionStorage.getItem('lName');
-    this.dob = sessionStorage.getItem('dob');
-    this.email = sessionStorage.getItem('email');
-    this.username = sessionStorage.getItem('un');
-    this.password = sessionStorage.getItem('pw');
+    // this.fav1 = localStorage.getItem('fav1');
+    // this.fav2 = localStorage.getItem('fav2');
+    // this.fav3 = localStorage.getItem('fav3');
+    this.favsArray = localStorage.getItem('favs');
+    this.fName = localStorage.getItem('fName');
+    this.lName = localStorage.getItem('lName');
+    this.dob = localStorage.getItem('dob');
+    this.email = localStorage.getItem('email');
+    this.username = localStorage.getItem('un');
+    this.password = localStorage.getItem('pw');
 
     console.log(this.fName);
     console.log(this.lName);
@@ -58,6 +57,7 @@ export class UserComponent implements OnInit {
     console.log(this.email);
     console.log(this.fName);
 
+    this.fs.viewFavorites(this.user_id);
 
   }
 
@@ -73,24 +73,37 @@ export class UserComponent implements OnInit {
 
     this.fs.viewFavorites(this.user_id);
 
-    this.cs.getCocktailFromApi(this.fav1).subscribe(
-      (data:any) => {
-        this.cocktail1 = data;
-        console.log(this.cocktail1);
-      }
-    )
-    this.cs.getCocktailFromApi(this.fav2).subscribe(
-      (data:any) => {
-        this.cocktail2 = data;
-        console.log(this.cocktail2);
-      }
-    )
-    this.cs.getCocktailFromApi(this.fav3).subscribe(
-      (data:any) => {
-        this.cocktail3 = data;
-        console.log(this.cocktail3);
-      }
-    )
+    this.fav1 = localStorage.getItem('fav1');
+    this.fav2 = localStorage.getItem('fav2');
+    this.fav3 = localStorage.getItem('fav3');
+
+
+    if(this.fav1 != null){
+      this.cs.getCocktailFromApi(this.fav1).subscribe(
+        (data:any) => {
+          this.cocktail1 = data;
+          console.log(this.cocktail1);
+        }
+      )
+    }
+    
+    if(this.fav2 != null){
+      this.cs.getCocktailFromApi(this.fav2).subscribe(
+        (data:any) => {
+          this.cocktail2 = data;
+          console.log(this.cocktail2);
+        }
+      )
+    }
+    
+    if(this.fav3 != null){
+      this.cs.getCocktailFromApi(this.fav3).subscribe(
+        (data:any) => {
+          this.cocktail3 = data;
+          console.log(this.cocktail3);
+        }
+      )
+    }
     
   }
 

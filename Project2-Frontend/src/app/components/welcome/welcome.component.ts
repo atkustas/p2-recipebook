@@ -35,21 +35,24 @@ loginFunc(): void {
 
       this.package = data;
 
-      sessionStorage.setItem('id', this.package.user.user_id);
-      sessionStorage.setItem('fName', this.package.user.firstName);
-      sessionStorage.setItem('lName', this.package.user.lastName);
-      sessionStorage.setItem('dob', this.package.user.dob);
-      sessionStorage.setItem('email', this.package.user.email);
-      sessionStorage.setItem('un', this.package.user.password);
-      sessionStorage.setItem('pw', this.package.user.username);
-      console.log(sessionStorage.getItem('id'));
+      localStorage.setItem('id', this.package.user.user_id);
+      console.log("CHECKING FOR USER ID")
+      console.log(localStorage.getItem('id'));
+      console.log(this.package.user.user_id);
+      localStorage.setItem('fName', this.package.user.firstName);
+      localStorage.setItem('lName', this.package.user.lastName);
+      localStorage.setItem('dob', this.package.user.dob);
+      localStorage.setItem('email', this.package.user.email);
+      localStorage.setItem('un', this.package.user.password);
+      localStorage.setItem('pw', this.package.user.username);
+      console.log(localStorage.getItem('id'));
 
       console.log("in loginFunc, should have Package");
       console.log(this.package);
 
       let newPackage = JSON.stringify(this.package);
-      sessionStorage.setItem('pkg', newPackage);
-      console.log(sessionStorage.getItem('pkg'));
+      localStorage.setItem('pkg', newPackage);
+      console.log(localStorage.getItem('pkg'));
     },
 
     () => {
