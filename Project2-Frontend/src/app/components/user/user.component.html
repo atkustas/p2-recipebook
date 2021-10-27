@@ -10,7 +10,7 @@
         <div class="card mb-4">
           <div class="card-body text-center">
             <img src="../../../assets/cocktail-placeholder.jpeg" class="rounded-circle img-fluid" style="width: 150px;">
-            <h5 id= "name" class="my-3">Hello John</h5>
+            <h5 id= "name" class="my-3">Hello {{fName}}</h5>
             <p class="text-muted mb-1">Certified Mixologist</p>
            
             
@@ -27,7 +27,7 @@
                 <p class="mb-0">Full Name</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">John Smith</p>
+                <p id=name class="text-muted mb-0">{{fName}} {{lName}}</p>
               </div>
             </div>
             <hr>
@@ -36,16 +36,16 @@
                 <p class="mb-0">Email</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">example@example.com</p>
+                <p class="text-muted mb-0">{{email}}</p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Age</p>
+                <p class="mb-0">DOB</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">21</p>
+                <p class="text-muted mb-0">{{dob}}</p>
               </div>
             </div>
             <br>

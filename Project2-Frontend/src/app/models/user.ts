@@ -1,12 +1,16 @@
 export class User {
     
     constructor(
-        public user_id:String,
-        public email:String,
-        public dob:String,
-        public firstname:String,
-        public lastname:String,
-        public password:String,
-        public username:String
+        public user_id:any,
+        public email:any,
+        public dob:any,
+        public firstname:any,
+        public lastname:any,
+        public password:any,
+        public username:any
     ){}
+
+    // constructor(
+    //     public user:object[]
+    // ){}
 }

@@ -18,23 +18,7 @@ export class LoginService {
 
 //private url = 'http://localhost:8090/login';
   constructor(private http: HttpClient) {}
-    
-  /*login(data: any): Observable<any>{
-    return this.http.post<any>(this.url, data).pipe(
-      tap((result) => this.save_token(result)),
-      catchError(this.handleError<any>('login'))
-    );
-  }
-  private handleError<T>(operation = 'operation', result?: T){
-    return (error: any): Observable<T> => {
-      return of(result as T);
-    };
-  }
-  private save_token(data: any){
-    if (data.success) {
-      localStorage.setItem('token', data.token)
-    }
-  }*/
+
   logurl = "http://localhost:8090/login"
 
    login(username:String, password:String):Observable<Package> {
@@ -43,26 +27,44 @@ export class LoginService {
         headers: new HttpHeaders({
             'Authorization': `Basic ${encodedCredentials}`
         })
-    }; 
+    };
     return this.http.post(this.logurl, {username, password}, {withCredentials:true}) as Observable<Package>
 
    };
 
   usurl = "http://localhost:8090/returnuser"
 
-  getUser(username:String, password:String):Observable<User>{
-    const jwt = localStorage.getItem('token');
-    console.log("Heres the JWT: " +jwt)
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Authorization': `Basic ${jwt}`
-      })
+  async getUser(username:String, password:String){
+    
+    let user;
+    var body = {
+      username: username,
+      password: password
     }
-    return this.http.post(this.usurl, {username, password}, {withCredentials:true}) as Observable<User>
-  }
 
-   
-   
+    let response = await fetch(this.usurl, {
+ 
+      method: "POST",
+      mode: 'cors',
+      body: JSON.stringify(body),
+      credentials: "include"
+  });
+
+    let data = await response.json();
+
+    if(response.status === 200){
+      user = data;
+
+      localStorage.setItem('fName', data.firstname);
+      localStorage.setItem('lName', data.lastname);
+      localStorage.setItem('dob', data.dob);
+      localStorage.setItem('email', data.email);
+
+      console.log(user);
+
+    }
+    return user;
+  }
 
   regurl = "http://localhost:8090/register"
 

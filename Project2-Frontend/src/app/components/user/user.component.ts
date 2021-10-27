@@ -3,6 +3,7 @@ import { LoginService } from 'src/app/services/login.service';
 import { FavoriteService } from 'src/app/services/favorite.service';
 import { ReviewService } from 'src/app/services/review.service';
 import { CocktailService } from 'src/app/services/cocktail.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-user',
@@ -14,8 +15,8 @@ export class UserComponent implements OnInit {
   constructor(private ls:LoginService, private fs: FavoriteService, private rs: ReviewService,
     private cs:CocktailService) { }
 
-  public userName:String = '';
-  public passWord:String = '';
+  public username:any;
+  public password:any;
   public user:any;
   public favorite:any;
   public reviews:any;
@@ -29,6 +30,12 @@ export class UserComponent implements OnInit {
   public cocktail1:any;
   public cocktail2:any;
   public cocktail3:any;
+  public fName:any;
+  public lName:any;
+  public dob:any;
+  public email:any;
+  public package:any;
+  
 
   ngOnInit(): void {
 
@@ -37,10 +44,27 @@ export class UserComponent implements OnInit {
     this.fav1 = localStorage.getItem('fav1');
     this.fav2 = localStorage.getItem('fav2');
     this.fav3 = localStorage.getItem('fav3');
-    console.log(this.fav1);
-    console.log(this.fav2);
-    console.log(this.fav3);
 
+    this.fName = localStorage.getItem('fName');
+    this.lName = localStorage.getItem('lName');
+    this.dob = localStorage.getItem('dob');
+    this.email = localStorage.getItem('email');
+    this.username = localStorage.getItem('un');
+    this.password = localStorage.getItem('pw');
+
+    console.log(this.fName);
+    console.log(this.lName);
+    console.log(this.dob);
+    console.log(this.email);
+    console.log(this.fName);
+    
+
+  }
+
+  populateUserInfo():void{
+    console.log("inside populateUserInfo");
+    this.ls.getUser(this.username, this.password);
+        
   }
 
   getFavorites(): void{
@@ -82,7 +106,7 @@ export class UserComponent implements OnInit {
   }
 
   getReviews(): void{
-    this.rs.viewReviews(this.user).subscribe(
+    this.rs.viewReviews(this.user_id).subscribe(
       (data:any) => {
         this.reviews = data; 
         console.log(this.reviews);

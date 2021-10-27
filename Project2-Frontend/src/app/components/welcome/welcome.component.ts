@@ -36,6 +36,12 @@ loginFunc(): void {
       this.package = data;
 
       localStorage.setItem('id', this.package.user.user_id);
+      localStorage.setItem('fName', this.package.user.firstName);
+      localStorage.setItem('lName', this.package.user.lastName);
+      localStorage.setItem('dob', this.package.user.dob);
+      localStorage.setItem('email', this.package.user.email);
+      localStorage.setItem('un', this.package.user.password);
+      localStorage.setItem('pw', this.package.user.username);
       console.log(localStorage.getItem('id'));
 
       console.log("in loginFunc, should have Package");
