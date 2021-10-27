@@ -90,6 +90,7 @@ export class HomeComponent implements OnInit {
 
   addFavoriteDrinkZero(drink:any): void{
 
+    this.user_id = localStorage.getItem('id');
     drink = localStorage.getItem('cocktailZero');    
 
     this.fs.addFavorite(this.user_id, drink);
@@ -102,6 +103,7 @@ export class HomeComponent implements OnInit {
 
   addFavoriteDrinkOne(drink:any): void{
 
+    this.user_id = localStorage.getItem('id');
     drink = localStorage.getItem('cocktailOne');    
 
     this.fs.addFavorite(this.user_id, drink);
@@ -114,6 +116,7 @@ export class HomeComponent implements OnInit {
 
   addFavoriteDrinkTwo(drink:any): void{
 
+    this.user_id = localStorage.getItem('id');
     drink = localStorage.getItem('cocktailTwo');    
 
     this.fs.addFavorite(this.user_id, drink);
