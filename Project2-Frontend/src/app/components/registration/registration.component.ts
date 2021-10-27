@@ -99,9 +99,9 @@ async getUserInfoFReg() {
 
 }
 
- clearForms() {
- this.inputEM = "0";
-this.inputAge = "0";
+clearForms() {
+this.inputEM = "0";
+this.inputDob = "0";
 this.inputFN = "0";
 this.inputLN = "0";
 this.inputPW = "0";
