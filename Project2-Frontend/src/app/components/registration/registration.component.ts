@@ -33,14 +33,18 @@ desc:String = "";//document.getElementById("EmpFormControlTextarea1").value;
 public inputFN:any;
 public inputLN:any;
 public inputUN:any;
+public inputUNTemp:any;
 public inputPW:any;
 public inputDob:any;
 public inputEM:any;
+public regFail:any;
 
 //add user function
 async getUserInfoFReg() {
 
   console.log("inside the registration async");
+
+  this.inputUNTemp = this.inputUN;
 
     let user:any = {
       email: this.inputEM,
@@ -74,9 +78,57 @@ async getUserInfoFReg() {
       // document.getElementById("EmpFormControlTextarea1").value = null;
 
       // //call function to disappear ticket form and show success message
-     //changeHideRegForm()
+     this.changeHideRegForm();
   }
-    //changeFailedRegFrom()
+
+if(response.status === 403){
+
+  console.log("failed 403 user created.");
+  this.amount=null;
+  this.regFail="403, underage"
+  // document.getElementById("EmpFormControlInputAmt").value = null;
+  // document.getElementById("EmpFormControlTextarea1").value = null;
+
+  // //call function to disappear ticket form and show success message
+ this.changeFailedRegFrom();
+}
+
+if(response.status === 406){
+
+  console.log("failed 406 user created.");
+  this.amount=null;
+  this.regFail="406, Username taken"
+  // document.getElementById("EmpFormControlInputAmt").value = null;
+  // document.getElementById("EmpFormControlTextarea1").value = null;
+
+  // //call function to disappear ticket form and show success message
+ this.changeFailedRegFrom();
+}
+
+if(response.status === 409){
+
+  console.log("failed 409 user created.");
+  this.amount=null;
+  this.regFail="409, Email already taken"
+  // document.getElementById("EmpFormControlInputAmt").value = null;
+  // document.getElementById("EmpFormControlTextarea1").value = null;
+
+  // //call function to disappear ticket form and show success message
+ this.changeFailedRegFrom();
+}
+
+  if(response.status === 500){
+
+    console.log("failed 500 user created.");
+    this.amount=null;
+    this.regFail="500, empty or massive failure"
+    // document.getElementById("EmpFormControlInputAmt").value = null;
+    // document.getElementById("EmpFormControlTextarea1").value = null;
+
+    // //call function to disappear ticket form and show success message
+   this.changeFailedRegFrom();
+}
+
 }
 
 
@@ -84,7 +136,8 @@ async getUserInfoFReg() {
 
  changeHideRegForm() {
 
-  this.clearForms()
+  this.clearForms();
+  this.submitName2();
 
   //user was created
 
@@ -96,16 +149,50 @@ async getUserInfoFReg() {
  changeFailedRegFrom() {
 
 //user failed to be created
+   this.submitName();
 
 }
 
 clearForms() {
-this.inputEM = "0";
-this.inputDob = "0";
-this.inputFN = "0";
-this.inputLN = "0";
-this.inputPW = "0";
-this.inputUN = "0";
+this.inputEM = "";
+this.inputDob = "";
+this.inputFN = "";
+this.inputLN = "";
+this.inputPW = "";
+
+this.inputUNTemp = this.inputUN;
+this.inputUN = "";
+}
+
+ //Greeter toggle
+ greeterDiv:boolean = false;
+ failBox:boolean = false;
+ failBoxTag:boolean = false;
+ //Greeter toggle
+ greeterDiv2:boolean = false;
+ sucBox:boolean = false;
+ sucBoxTag:boolean = false;
+
+submitName(){
+
+  this.greeterDiv = true;
+
+  this.failBox = !this.failBox;
+  this.failBoxTag = !this.failBox;
+}
+
+submitName2(){
+
+  this.greeterDiv = false;
+
+  this.failBox = !this.failBox;
+  this.failBoxTag = !this.failBox;
+
+
+  this.greeterDiv2 = true;
+
+  this.sucBox = !this.sucBox;
+  this.sucBoxTag = !this.sucBox;
 }
 
 }

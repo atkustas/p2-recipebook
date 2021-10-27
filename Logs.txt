@@ -67,3 +67,15 @@
 2021-10-26 12:51:24 INFO  CocktailDao:48 - New cocktail added to database: Whiskey Sour
 2021-10-26 12:51:24 INFO  CocktailDao:48 - New cocktail added to database: Moscow Mule
 2021-10-26 13:08:19 INFO  RegistrationController:61 - New user null nullregistered with site.
+2021-10-26 22:35:03 INFO  CocktailDao:48 - New cocktail added to database: Whiskey Sour
+2021-10-26 22:35:03 INFO  CocktailDao:48 - New cocktail added to database: Moscow Mule
+2021-10-26 22:35:28 INFO  LoginService:28 - Billy Bob logged in with username: username and password: password
+2021-10-26 22:37:20 INFO  FavoriteService:20 - User User [user_id=1, email=test@gmail.com, username=username, password=password, firstName=Billy, lastName=Bob, dob=10/15/2021] added drink Cocktail [drink_id=2, drink=Moscow Mule] to their Favorites.
+2021-10-26 22:39:13 INFO  RegistrationController:61 - New user Freddie Tadeolomelin registered with site.
+2021-10-26 22:44:30 INFO  RegistrationController:61 - New user test neck registered with site.
+2021-10-26 22:46:17 INFO  RegistrationController:61 - New user testy2 luo registered with site.
+2021-10-26 22:50:22 INFO  RegistrationController:61 - New user Geeps Tadeo registered with site.
+2021-10-26 23:02:57 INFO  RegistrationController:61 - New user Gepz Mjeager registered with site.
+2021-10-26 23:04:19 INFO  RegistrationController:61 - New user Gon Freakz registered with site.
+2021-10-26 23:05:34 INFO  RegistrationController:47 - Underage user attempted registration and was rejected.
+2021-10-26 23:05:58 INFO  RegistrationController:61 - New user Killua Zodick registered with site.
