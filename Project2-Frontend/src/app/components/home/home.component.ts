@@ -13,16 +13,18 @@ import { FavoriteService } from 'src/app/services/favorite.service';
 export class HomeComponent implements OnInit {
 
   public cocktail:any;
-
   public cocktails: any[] = [0];
-
-  public input:any = "";
-
-  public drink:any = "";
+  public input:any;
+  public user_id:any;
+  public drink:any;
+  public info:any;
 
   constructor(private cs:CocktailService, private fs:FavoriteService) { }
 
   ngOnInit(): void {
+
+    this.user_id = localStorage.getItem('id');
+    console.log("This is the user ID: " +this.user_id);
    
   }
 
@@ -38,18 +40,11 @@ export class HomeComponent implements OnInit {
   getRanDrink(): void {
     this.cs.getrandomCocktail().subscribe(
        (data:any) =>{
-
-
-         this.cocktail = data;
-         //this.getRanDrink();
-
-        // console.log(this.cocktail)
-         //console.log(this.cocktail.drinks)
-        //  console.log(this.cocktail.drinks[0].strDrinkThumb)
-
-
-
+          this.cocktail = data;
+          localStorage.setItem('cocktailZero', this.cocktail.drinks[0].strDrink);
+         
         },
+
        () => {
          this.cocktail = null;
          console.log("Whoops no drink for you");
@@ -63,6 +58,11 @@ export class HomeComponent implements OnInit {
       (data:any) => {
         this.cocktail = data;
         console.log(this.cocktail);
+
+        localStorage.setItem('cocktailZero', this.cocktail.drinks[0].strDrink);
+        localStorage.setItem('cocktailOne', this.cocktail.drinks[1].strDrink);
+        localStorage.setItem('cocktailTwo', this.cocktail.drinks[2].strDrink);
+
       },
       () => {
         this.cocktail = null;
@@ -75,6 +75,11 @@ export class HomeComponent implements OnInit {
     this.cs.getCocktailByIngredient(input).subscribe(
       (data:any) => {
         this.cocktail = data;
+
+        localStorage.setItem('cocktailZero', this.cocktail.drinks[0].strDrink);
+        localStorage.setItem('cocktailOne', this.cocktail.drinks[1].strDrink);
+        localStorage.setItem('cocktailTwo', this.cocktail.drinks[2].strDrink);
+
       },
       () => {
         this.cocktail = null;
@@ -83,15 +88,40 @@ export class HomeComponent implements OnInit {
     )
   }
 
-  addFavoriteDrink(drink:any): void{
+  addFavoriteDrinkZero(drink:any): void{
 
-    let user_id;
+    drink = localStorage.getItem('cocktailZero');    
 
-    user_id = localStorage.getItem('user.user_id');
-    console.log(user_id);
+    this.fs.addFavorite(this.user_id, drink);
 
-    this.fs.addFavorite(user_id, drink).subscribe(
-    )
+    console.log("Favorite Drink added.");
+    console.log(drink);
+    console.log("This is the user ID: " +this.user_id)
+    
+  }
+
+  addFavoriteDrinkOne(drink:any): void{
+
+    drink = localStorage.getItem('cocktailOne');    
+
+    this.fs.addFavorite(this.user_id, drink);
+
+    console.log("Favorite Drink added.");
+    console.log(drink);
+    console.log("This is the user ID: " +this.user_id)
+    
+  }
+
+  addFavoriteDrinkTwo(drink:any): void{
+
+    drink = localStorage.getItem('cocktailTwo');    
+
+    this.fs.addFavorite(this.user_id, drink);
+
+    console.log("Favorite Drink added.");
+    console.log(drink);
+    console.log("This is the user ID: " +this.user_id)
+    
   }
 
 

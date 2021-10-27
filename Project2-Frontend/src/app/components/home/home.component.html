@@ -57,7 +57,7 @@
 
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addFavoriteDrink(drink)">Add to Favorites</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addFavoriteDrinkZero(drink)">Add to Favorites</button>
 
                   </div>
 
@@ -70,7 +70,7 @@
            <img class="card-img-top"  src={{cocktail.drinks[1].strDrinkThumb}}  style="height: 225px; width: 100%; display: block;">
               <div class="card-body">
                 <div>
-                    <h2 [(ngModel)] = "drink">{{cocktail.drinks[1].strDrink}}</h2>
+                    <h2>{{cocktail.drinks[1].strDrink}}</h2>
                   </div>
                 <p class="card-text">
                     <div class="stats mt-2">
@@ -98,7 +98,7 @@
                       </div>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addFavoriteDrink(drink)">Add to Favorites</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addFavoriteDrinkOne(drink)">Add to Favorites</button>
 
                   </div>
 
@@ -109,10 +109,10 @@
           <div class="col-md-4">
 
                   <div class="card mb-4 box-shadow" *ngIf="cocktail.drinks.length > 2">
-                    <img class="card-img-top"  src={{cocktail.drinks[0].strDrinkThumb}}  style="height: 225px; width: 100%; display: block;">
+                    <img class="card-img-top"  src={{cocktail.drinks[2].strDrinkThumb}}  style="height: 225px; width: 100%; display: block;">
                        <div class="card-body">
                          <div>
-                             <h2 [(ngModel)] = "drink">{{cocktail.drinks[2].strDrink}}</h2>
+                             <h2>{{cocktail.drinks[2].strDrink}}</h2>
                            </div>
                 <p class="card-text">
                     <div class="stats mt-2">
@@ -135,12 +135,12 @@
                       <br>
                       <div class="card-text">
                         <p>
-                          {{cocktail.drinks[0].strInstructions}}
+                          {{cocktail.drinks[2].strInstructions}}
                         </p>
                       </div>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addFavoriteDrink(drink)">Add to Favorites</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addFavoriteDrinkTwo(drink)">Add to Favorites</button>
 
                   </div>
 

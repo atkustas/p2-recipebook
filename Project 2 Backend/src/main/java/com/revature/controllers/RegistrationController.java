@@ -55,10 +55,10 @@ public class RegistrationController {
 			log.info("User attempted registration with an email already in use: " + userInput.getEmail() + ". Registration failed.");
 
 		} else {
-			uDao.insertUser(userInput);
+			rs.registerUser(userInput);;
 			ctx.status(201);
 			ctx.result("New user added!");
-			log.info("New user " + userInput.getFirstName() +" "+ userInput.getLastName() + "registered with site.");
+			log.info("New user " + userInput.getFirstName() +" "+ userInput.getLastName() + " registered with site.");
 		}
 
 		};

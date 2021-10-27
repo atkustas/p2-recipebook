@@ -53,7 +53,7 @@ public class Driver {
 		Javalin app = Javalin.create(
 
 				config -> {
-					config.enableCorsForAllOrigins();// allows the sever to process JS request from anywhere
+					config.enableCorsForAllOrigins();// allows the server to process JS request from anywhere
 				}
 
 		).start(8090);

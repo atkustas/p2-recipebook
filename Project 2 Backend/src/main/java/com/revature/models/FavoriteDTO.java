@@ -16,6 +16,11 @@ public class FavoriteDTO {
 		this.user_id = user_id;
 	}
 
+	public FavoriteDTO(int user_id) {
+		super();
+		this.user_id = user_id;
+	}
+
 	@Override
 	public String toString() {
 		return "FavoriteDTO [drink=" + drink + ", user_id=" + user_id + "]";

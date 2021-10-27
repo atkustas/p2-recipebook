@@ -20,7 +20,7 @@ public class FavoriteService {
 		log.info("User " + f.getUser_list() +" added drink " + f.getDrink_id() + " to their Favorites.");
 	}
 	
-	public List<Favorite> viewFavorites(User u) {
+	public List<Favorite> viewFavorites(int u) {
 		return fd.viewFavorites(u);
 	}
 

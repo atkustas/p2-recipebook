@@ -14,8 +14,25 @@ export class FavoriteService {
     //adding a favorite cocktail
     addFavUrl = "http://localhost:8090/addfavorite"
 
-    addFavorite(user_id:any, drink:String){
-        return this.http.post(this.addFavUrl, {user_id, drink}, {withCredentials:true})
+    async addFavorite(user_id:any, drink:String){
+
+       var fav = {
+           user_id: user_id,
+           drink: drink
+       }
+
+       let response = await fetch(this.addFavUrl, {
+
+        method: "POST",
+        mode: 'cors',
+        body: JSON.stringify(fav),
+        credentials: "include"
+    });
+
+    if(response.status === 201){
+
+        console.log("Favorite drink added.");
+    }
         
     }
 
@@ -23,16 +40,30 @@ export class FavoriteService {
     //viewing user favorite cocktails
     viewFavsUrl = "http://localhost:8090/viewfavorites"
 
-    viewFavorites(user:User): Observable<Favorite>{
-       return this.http.post(this.viewFavsUrl, {user}, {withCredentials:true}) as Observable<Favorite>
+    async viewFavorites(user_id:any){
+        console.log("Inside viewFavorites async")
+        let favsArray;
+
+        var id = {
+            user_id: user_id
+        }
+
+        let response = await fetch(this.viewFavsUrl, {
+ 
+         method: "POST",
+         mode: 'cors',
+         body: JSON.stringify(id),
+         credentials: "include"
+     });
+ 
+     if(response.status === 200){
+ 
+        favsArray = response.body;
+         console.log("Favorites viewed");
+     }
+     console.log(favsArray);
+     return favsArray;
 
     }
-
-
-
-
-
-
-
 
 }
