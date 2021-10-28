@@ -11,10 +11,11 @@ import org.hibernate.Session;
 
 import com.revature.controllers.LoginController;
 import com.revature.controllers.RegistrationController;
+<<<<<<< HEAD
 import com.revature.controllers.ReviewController;
-import com.revature.daos.CocktailDao;
+=======
+>>>>>>> d4ef34dcf336f70fe99e628ed2c751d9f5df5b2c
 import com.revature.daos.UserDao;
-import com.revature.models.Cocktail;
 import com.revature.models.User;
 import com.revature.utils.HibernateUtil;
 
@@ -23,12 +24,12 @@ import io.javalin.Javalin;
 public class Driver {
 
 	public static void main(String[] args) {
-		
 		System.out.println("%%%%% MAIN LOADED %%%%%");
-		
 		LoginController lc = new LoginController();
-		CocktailDao cd = new CocktailDao();
+<<<<<<< HEAD
 		ReviewController rvc = new ReviewController();
+=======
+>>>>>>> d4ef34dcf336f70fe99e628ed2c751d9f5df5b2c
 		RegistrationController rc = new RegistrationController();
 		
 		//open connection
@@ -52,8 +53,10 @@ public class Driver {
 		
 		app.post("/login", lc.loginHandler);
 		app.post("/register", rc.register);
+<<<<<<< HEAD
 		app.post("/addreview", rvc.addreview);
-
+=======
+>>>>>>> d4ef34dcf336f70fe99e628ed2c751d9f5df5b2c
 		
 		
 		//add some users
@@ -61,13 +64,6 @@ public class Driver {
 		UserDao uDao = new UserDao();
 		
 		uDao.insertUser(u1);
-		
-		//add some cocktails
-		Cocktail c1 = new Cocktail("Whiskey Sour");
-		Cocktail c2 = new Cocktail("Moscow Mule");
-		
-		cd.addCocktail(c1);
-		cd.addCocktail(c2);
 
 >>>>>>> parent of 171a02461 (fixed reviewsByUser, bug in reviewsByDrink)
 

@@ -15,14 +15,10 @@ import com.revature.services.UserService;
 import io.javalin.http.Handler;
 
 public class ReviewController {
-	
 	ReviewService rs=new ReviewService();
 	UserService us=new UserService();
-	
 	public Handler addreview = (ctx) -> {
-		
 		HttpSession session = ctx.req.getSession(false);
-		
 		if(session != null) {
 			String body = ctx.body();
 			Gson gson = new Gson();
@@ -32,10 +28,8 @@ public class ReviewController {
 			User rUser = rs.getUserById(rDTO.getUser_id());
 
 			Calendar now = Calendar.getInstance();
-			
-			String currentDate = String.valueOf(now.get(Calendar.MONTH)+1)+"/"+String.valueOf(now.get(Calendar.DAY_OF_MONTH))+"/"+String.valueOf(now.get(Calendar.YEAR));
-			Review r = new Review(rUser, rDrink, rDTO.getReview(), currentDate);
-			
+			String currentDate=String.valueOf(now.get(Calendar.MONTH)+1)+"/"+String.valueOf(now.get(Calendar.DAY_OF_MONTH))+"/"+String.valueOf(now.get(Calendar.YEAR));
+			Review r = new Review(rUser,rDrink,rDTO.getReview(), currentDate);
 			rs.addReview(r);
 			
 			ctx.status(200);

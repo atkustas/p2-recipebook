@@ -9,11 +9,9 @@ public class ReviewDao implements ReviewInterface {
 
 	@Override
 	public void addReview(Review r) {
-		
 		Session ses = HibernateUtil.getSession();
 		
 		ses.save(r);
-		
 		HibernateUtil.closeSession();
 	}
 
