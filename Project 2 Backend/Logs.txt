@@ -21,3 +21,7 @@
 2021-10-27 17:01:44 INFO  FavoriteService:20 - User User [user_id=2, email=test5@gmail.com, username=akustas, password=asdf, firstName=Andreas, lastName=Kustas, dob=03/20/1989] added drink Cocktail [drink_id=6, drink=Brain Fart] to their Favorites.
 2021-10-27 17:08:48 INFO  ReviewService:50 - Cocktail reviews viewed for User 0:Billy Bob
 2021-10-27 17:08:49 INFO  CocktailDao:48 - New cocktail added to database: Test Drink
+2021-10-27 18:11:04 INFO  CocktailDao:48 - New cocktail added to database: Whiskey Sour
+2021-10-27 18:11:04 INFO  CocktailDao:48 - New cocktail added to database: Moscow Mule
+2021-10-27 21:51:04 INFO  CocktailDao:48 - New cocktail added to database: Whiskey Sour
+2021-10-27 21:51:04 INFO  CocktailDao:48 - New cocktail added to database: Moscow Mule
