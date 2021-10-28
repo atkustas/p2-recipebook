@@ -52,13 +52,7 @@ public class Driver {
 		
 		app.post("/login", lc.loginHandler);
 		app.post("/register", rc.register);
-		
 		app.post("/addreview", rvc.addreview);
-		app.get("/allreviews", rvc.getallreviews);
-		app.post("/reviewsbyuser", rvc.reviewsbyuser);
-		app.post("/drinkreviews", rvc.reviewsbydrink);
-		
-		app.post("/returnuser", lc.returnuser);
 
 		
 		
