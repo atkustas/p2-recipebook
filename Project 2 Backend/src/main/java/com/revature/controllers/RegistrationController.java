@@ -2,10 +2,6 @@ package com.revature.controllers;
 
 import java.util.Calendar;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d4ef34dcf336f70fe99e628ed2c751d9f5df5b2c
 import com.google.gson.Gson;
 import com.revature.daos.UserDao;
 import com.revature.models.User;
@@ -24,10 +20,6 @@ public class RegistrationController {
 		String body = ctx.body(); 
 		Gson gson = new Gson();
 		User userInput = gson.fromJson(body, User.class);
-<<<<<<< HEAD
-=======
-
->>>>>>> d4ef34dcf336f70fe99e628ed2c751d9f5df5b2c
 		
 		//BIRTHDAY VALIDATION ADDED
 		Calendar now = Calendar.getInstance();
@@ -53,12 +45,6 @@ public class RegistrationController {
 		} else if(rs.findUserByEmail(userInput.getEmail())) {
 			ctx.status(409);
 			ctx.result("Account with this email already exists.");
-<<<<<<< HEAD
-=======
-			
-			
-			
->>>>>>> d4ef34dcf336f70fe99e628ed2c751d9f5df5b2c
 		} else {
 			uDao.insertUser(userInput);
 			ctx.status(201);
