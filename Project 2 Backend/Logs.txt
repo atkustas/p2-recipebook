@@ -27,3 +27,5 @@
 2021-10-27 21:51:04 INFO  CocktailDao:48 - New cocktail added to database: Moscow Mule
 2021-10-27 22:36:19 INFO  CocktailDao:48 - New cocktail added to database: Whiskey Sour
 2021-10-27 22:36:19 INFO  CocktailDao:48 - New cocktail added to database: Moscow Mule
+2021-10-27 22:46:44 INFO  CocktailDao:48 - New cocktail added to database: Whiskey Sour
+2021-10-27 22:46:45 INFO  CocktailDao:48 - New cocktail added to database: Moscow Mule
