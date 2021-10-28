@@ -40,8 +40,10 @@ public class UserDao implements UserDaoInterface {
 		Session ses = HibernateUtil.getSession();
 
 		User user = ses.get(User.class, tempId);
+		//System.out.println(user);
 
 		HibernateUtil.closeSession();
+
 
 		return user;
 	}
