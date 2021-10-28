@@ -8,8 +8,8 @@ public class FavoriteService {
 	
 	FavoriteDao fd = new FavoriteDao();
 	
-	public void addFavorite(Favorite f) {
-		fd.addFavorite(f);
+	public void addFavorite(User u, Cocktail drink) {
+		fd.addFavorite(u, drink);
 	}
 
 }
