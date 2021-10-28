@@ -1,6 +1,7 @@
 package com.revature;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class Driver {
 
 	public static void main(String[] args) {
@@ -69,6 +70,12 @@ public class Driver {
 >>>>>>> parent of 171a02461 (fixed reviewsByUser, bug in reviewsByDrink)
 =======
 >>>>>>> parent of 073a79bc0 (LoginDTO and LoginController service created)
+=======
+public class Driver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+>>>>>>> parent of d8a47096a (added Hibernate to model classes, put Javalin in Driver)
 
 	}
 
