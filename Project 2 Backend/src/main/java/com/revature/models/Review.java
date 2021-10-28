@@ -1,34 +1,10 @@
 package com.revature.models;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "reviews")
 public class Review {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "rev_id")
 	private int rev_id;
-	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name= "rev_author", referencedColumnName= "user_id")
-	private User rev_author;
-	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "drink", referencedColumnName = "drink_id")
-	private Cocktail drink;
-	
-	
+	private int user_id;
+	private int drink_id;
 	private String review;
 	private String date;
 	
@@ -38,27 +14,27 @@ public class Review {
 	}
 
 	//all-args
-	public Review(int rev_id, User rev_author, Cocktail drink, String review, String date) {
+	public Review(int rev_id, int user_id, int drink_id, String review, String date) {
 		super();
 		this.rev_id = rev_id;
-		this.rev_author = rev_author;
-		this.drink = drink;
+		this.user_id = user_id;
+		this.drink_id = drink_id;
 		this.review = review;
 		this.date = date;
 	}
 
 	//no-id
-	public Review(User rev_author, Cocktail drink, String review, String date) {
+	public Review(int user_id, int drink_id, String review, String date) {
 		super();
-		this.rev_author = rev_author;
-		this.drink = drink;
+		this.user_id = user_id;
+		this.drink_id = drink_id;
 		this.review = review;
 		this.date = date;
 	}
 
 	@Override
 	public String toString() {
-		return "Review [rev_id=" + rev_id + ", rev_author=" + rev_author + ", drink=" + drink + ", review=" + review
+		return "Review [rev_id=" + rev_id + ", user_id=" + user_id + ", drink_id=" + drink_id + ", review=" + review
 				+ ", date=" + date + "]";
 	}
 
@@ -70,20 +46,20 @@ public class Review {
 		this.rev_id = rev_id;
 	}
 
-	public User getRev_author() {
-		return rev_author;
+	public int getUser_id() {
+		return user_id;
 	}
 
-	public void setRev_author(User rev_author) {
-		this.rev_author = rev_author;
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 
-	public Cocktail getDrink() {
-		return drink;
+	public int getDrink_id() {
+		return drink_id;
 	}
 
-	public void setDrink(Cocktail drink) {
-		this.drink = drink;
+	public void setDrink_id(int drink_id) {
+		this.drink_id = drink_id;
 	}
 
 	public String getReview() {
@@ -107,10 +83,10 @@ public class Review {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((date == null) ? 0 : date.hashCode());
-		result = prime * result + ((drink == null) ? 0 : drink.hashCode());
-		result = prime * result + ((rev_author == null) ? 0 : rev_author.hashCode());
+		result = prime * result + drink_id;
 		result = prime * result + rev_id;
 		result = prime * result + ((review == null) ? 0 : review.hashCode());
+		result = prime * result + user_id;
 		return result;
 	}
 
@@ -128,15 +104,7 @@ public class Review {
 				return false;
 		} else if (!date.equals(other.date))
 			return false;
-		if (drink == null) {
-			if (other.drink != null)
-				return false;
-		} else if (!drink.equals(other.drink))
-			return false;
-		if (rev_author == null) {
-			if (other.rev_author != null)
-				return false;
-		} else if (!rev_author.equals(other.rev_author))
+		if (drink_id != other.drink_id)
 			return false;
 		if (rev_id != other.rev_id)
 			return false;
@@ -145,9 +113,15 @@ public class Review {
 				return false;
 		} else if (!review.equals(other.review))
 			return false;
+		if (user_id != other.user_id)
+			return false;
 		return true;
 	}
-
+	
+	
+	
+	
+	
 	
 
 }
