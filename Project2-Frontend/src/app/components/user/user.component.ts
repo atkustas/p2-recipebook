@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { LoginService } from 'src/app/services/login.service';
 import { FavoriteService } from 'src/app/services/favorite.service';
 import { ReviewService } from 'src/app/services/review.service';
 import { CocktailService } from 'src/app/services/cocktail.service';
+=======
+>>>>>>> master
 
 @Component({
   selector: 'app-user',
@@ -11,6 +14,7 @@ import { CocktailService } from 'src/app/services/cocktail.service';
 })
 export class UserComponent implements OnInit {
 
+<<<<<<< HEAD
   constructor(private ls:LoginService, private fs: FavoriteService, private rs: ReviewService,
     private cs:CocktailService) { }
 
@@ -146,4 +150,11 @@ export class UserComponent implements OnInit {
   }
 
 
+=======
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+>>>>>>> master
 }
