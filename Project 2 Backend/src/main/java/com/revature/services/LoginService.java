@@ -6,6 +6,7 @@ public class LoginService {
 
 	UserDao uDao = new UserDao();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	
 	public boolean login(String username, String password) {
@@ -28,6 +29,8 @@ public class LoginService {
 	}
 	
 >>>>>>> parent of a12cc23a7 (login functionality fixed)
+=======
+>>>>>>> parent of 9fad7ceed (insert user, login functionality almost done)
 
 	public boolean login(String username, String password) {
 		return uDao.getCredentials(username, password);

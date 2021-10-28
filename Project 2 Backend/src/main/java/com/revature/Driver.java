@@ -11,10 +11,13 @@ import org.hibernate.Session;
 
 import com.revature.controllers.LoginController;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import com.revature.daos.UserDao;
 import com.revature.models.User;
 >>>>>>> parent of 0fc0ec34e (Registration functionality)
+=======
+>>>>>>> parent of 9fad7ceed (insert user, login functionality almost done)
 import com.revature.utils.HibernateUtil;
 
 import io.javalin.Javalin;
@@ -47,6 +50,7 @@ public class Driver {
 		//Added by Mesfin
 		app.post("/login", lc.loginHandler);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		
 		
@@ -56,6 +60,8 @@ public class Driver {
 		
 		uDao.insertUser(u1);
 >>>>>>> parent of 0fc0ec34e (Registration functionality)
+=======
+>>>>>>> parent of 9fad7ceed (insert user, login functionality almost done)
 
 >>>>>>> parent of 171a02461 (fixed reviewsByUser, bug in reviewsByDrink)
 

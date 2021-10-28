@@ -1,10 +1,13 @@
 package com.revature.daos;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import java.util.List;
 
 >>>>>>> parent of 0fc0ec34e (Registration functionality)
+=======
+>>>>>>> parent of 9fad7ceed (insert user, login functionality almost done)
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -25,6 +28,7 @@ public class UserDao implements UserDaoInterface {
 				HibernateUtil.closeSession();
 				return true;
 			}
+<<<<<<< HEAD
 <<<<<<< HEAD
 			
 			HibernateUtil.closeSession();
@@ -52,15 +56,23 @@ public class UserDao implements UserDaoInterface {
 	public List<User> findAllUsers() {
 
 		Session ses = HibernateUtil.getSession();
+=======
+>>>>>>> parent of 9fad7ceed (insert user, login functionality almost done)
 			
-		List<User> listOfUsers = ses.createQuery("FROM User").list();
-		HibernateUtil.closeSession();
+			HibernateUtil.closeSession();
+			return false;
 		
+<<<<<<< HEAD
 		//debugging
 		for(User u : listOfUsers) {
 			System.out.println("Inside findAllUsers");
 			System.out.println(u);
 >>>>>>> parent of 0fc0ec34e (Registration functionality)
+=======
+		} catch(HibernateException e) {
+			e.printStackTrace();
+			System.out.println("Unable to access database for login");
+>>>>>>> parent of 9fad7ceed (insert user, login functionality almost done)
 		}
 		return false;
 	}
