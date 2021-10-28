@@ -9,6 +9,7 @@ public class Driver {
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
+<<<<<<< HEAD
 import com.revature.controllers.LoginController;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -18,6 +19,8 @@ import com.revature.models.User;
 >>>>>>> parent of 0fc0ec34e (Registration functionality)
 =======
 >>>>>>> parent of 9fad7ceed (insert user, login functionality almost done)
+=======
+>>>>>>> parent of 073a79bc0 (LoginDTO and LoginController service created)
 import com.revature.utils.HibernateUtil;
 
 import io.javalin.Javalin;
@@ -26,7 +29,6 @@ public class Driver {
 
 	public static void main(String[] args) {
 		System.out.println("%%%%% MAIN LOADED %%%%%");
-		LoginController lc = new LoginController(); 
 		
 		//open connection
 		try (Session ses = HibernateUtil.getSession()) {
@@ -46,6 +48,7 @@ public class Driver {
 				}
 
 		).start(8090);
+<<<<<<< HEAD
 		
 		//Added by Mesfin
 		app.post("/login", lc.loginHandler);
@@ -64,6 +67,8 @@ public class Driver {
 >>>>>>> parent of 9fad7ceed (insert user, login functionality almost done)
 
 >>>>>>> parent of 171a02461 (fixed reviewsByUser, bug in reviewsByDrink)
+=======
+>>>>>>> parent of 073a79bc0 (LoginDTO and LoginController service created)
 
 	}
 
