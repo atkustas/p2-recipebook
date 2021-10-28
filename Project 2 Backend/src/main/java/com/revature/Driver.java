@@ -10,10 +10,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 import com.revature.controllers.LoginController;
-import com.revature.controllers.RegistrationController;
-import com.revature.controllers.ReviewController;
-import com.revature.daos.UserDao;
-import com.revature.models.User;
 import com.revature.utils.HibernateUtil;
 
 import io.javalin.Javalin;
@@ -22,9 +18,7 @@ public class Driver {
 
 	public static void main(String[] args) {
 		System.out.println("%%%%% MAIN LOADED %%%%%");
-		LoginController lc = new LoginController();
-		ReviewController rvc = new ReviewController();
-		RegistrationController rc = new RegistrationController();
+		LoginController lc = new LoginController(); 
 		
 		//open connection
 		try (Session ses = HibernateUtil.getSession()) {
@@ -45,16 +39,8 @@ public class Driver {
 
 		).start(8090);
 		
+		//Added by Mesfin
 		app.post("/login", lc.loginHandler);
-		app.post("/register", rc.register);
-		app.post("/addreview", rvc.addreview);
-		
-		
-		//add some users
-		User u1 = new User("test@gmail.com", "username", "password", "Billy", "Bob", "10/15/2021");
-		UserDao uDao = new UserDao();
-		
-		uDao.insertUser(u1);
 
 >>>>>>> parent of 171a02461 (fixed reviewsByUser, bug in reviewsByDrink)
 
