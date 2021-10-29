@@ -1,6 +1,6 @@
 export class Cocktail {
 
     constructor(
-        public drinks:object[]
+        public drinks:any
     ){}
 }

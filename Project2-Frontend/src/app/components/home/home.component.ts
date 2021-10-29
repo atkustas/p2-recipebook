@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
    
   }
 
-
   fillRanDrink(): void{
     this.cocktails[0] = this.getRanDrink();
     this.cocktails[1] = this.getRanDrink();
@@ -59,9 +58,9 @@ export class HomeComponent implements OnInit {
         this.cocktail = data;
         console.log(this.cocktail);
 
-        localStorage.setItem('cocktailZero', this.cocktail.drinks[0].strDrink);
-        localStorage.setItem('cocktailOne', this.cocktail.drinks[1].strDrink);
-        localStorage.setItem('cocktailTwo', this.cocktail.drinks[2].strDrink);
+        // localStorage.setItem('cocktailZero', this.cocktail.drinks[0].strDrink);
+        // localStorage.setItem('cocktailOne', this.cocktail.drinks[1].strDrink);
+        // localStorage.setItem('cocktailTwo', this.cocktail.drinks[2].strDrink);
 
       },
       () => {
@@ -76,9 +75,9 @@ export class HomeComponent implements OnInit {
       (data:any) => {
         this.cocktail = data;
 
-        localStorage.setItem('cocktailZero', this.cocktail.drinks[0].strDrink);
-        localStorage.setItem('cocktailOne', this.cocktail.drinks[1].strDrink);
-        localStorage.setItem('cocktailTwo', this.cocktail.drinks[2].strDrink);
+        // localStorage.setItem('cocktailZero', this.cocktail.drinks[0].strDrink);
+        // localStorage.setItem('cocktailOne', this.cocktail.drinks[1].strDrink);
+        // localStorage.setItem('cocktailTwo', this.cocktail.drinks[2].strDrink);
 
       },
       () => {
