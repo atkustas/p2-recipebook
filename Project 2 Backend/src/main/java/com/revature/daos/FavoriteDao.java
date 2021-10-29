@@ -21,7 +21,6 @@ public class FavoriteDao implements FavoriteInterface {
 //			List<Favorite> favoriteList = viewFavorites(f.getUser_list().getUser_id());
 		
 			ses.save(f);
-			
 		} catch(Exception e) {
 			System.out.println("Favorite addition failed.");
 			e.printStackTrace();
@@ -30,6 +29,7 @@ public class FavoriteDao implements FavoriteInterface {
 		HibernateUtil.closeSession();
 		
 	}
+
 
 	@Override
 	public void deleteFavoriteById(int id) {
