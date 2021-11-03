@@ -48,7 +48,7 @@ List of features ready and TODOs for future development
 ## Getting Started
 
 git clone command
-  git clone https://github.com/MesfinMT/P2.git
+  git clone https://github.com/atkustas/p2-recipebook
 
 environment setup steps
   Import the cloned backend spring project as Gradle project
